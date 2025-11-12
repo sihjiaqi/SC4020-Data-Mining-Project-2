@@ -2,7 +2,11 @@
 # Stage 1 UI with pool-limited options:
 # - Options at the current level are restricted to symptoms that appear in the
 #   filtered dataset (rows that match *confirmed* present symptoms).
-# - If that hides everything, we fall back to the full level.
+# - No fallback: if none appear, chips list is empty.
+# - Predictions table shows only rows with prob ≥ 0.70.
+# - "You might also be experiencing" lists names (no probs), across ALL levels,
+#   and only appears if the user has selected at least one symptom.
+# - When confident (top prob ≥ threshold), show precautions for top disease.
 
 from __future__ import annotations
 
@@ -30,54 +34,16 @@ st.set_page_config(page_title="Stage 1: Symptom-based Progressive Diagnosis", la
 
 RAW_DATASET_CSV = "data/disease_symptom/dataset.csv"
 SEVERITY_CSV    = "data/disease_symptom/Symptom-severity.csv"
+PRECAUTIONS_CSV = "data/disease_symptom/symptom_precaution.csv"
 TARGET_COL      = "Disease"
+
 DEFAULT_CONF_THRESH = 0.80
-
-
+PREDICTION_DISPLAY_MIN = 0.70   # only show predictions ≥ 0.70
 
 
 # --------------------------
-# Cache dataset (wide)
+# Loaders (cached)
 # --------------------------
-
-# ---- UI filters ----
-PREDICTION_DISPLAY_MIN = 0.70   # only show predictions > 0.70
-
-# ---- Precautions loader ----
-@st.cache_resource(show_spinner=False)
-def load_precautions_map(csv_path: str = "data/disease_symptom/symptom_precaution.csv") -> dict[str, list[str]]:
-    """
-    Returns: { disease_name -> [prec1, prec2, ...] } with 'None' filtered out.
-    If file is missing, returns {} silently.
-    """
-    try:
-        if not os.path.exists(csv_path):
-            return {}
-        dfp = pd.read_csv(csv_path)
-        # Normalise column names
-        cols = {c.lower(): c for c in dfp.columns}
-        dz_col = cols.get("disease", "Disease")
-        prec_cols = [c for c in dfp.columns if str(c).lower().startswith("precaution")]
-        out = {}
-        for _, r in dfp.iterrows():
-            dz = str(r[dz_col]).strip()
-            vals = []
-            for c in prec_cols:
-                v = r.get(c)
-                if pd.isna(v):
-                    continue
-                v = str(v).strip()
-                if not v or v.lower() == "none":
-                    continue
-                vals.append(v)
-            if dz:
-                out[dz] = vals
-        return out
-    except Exception:
-        return {}
-
-
-
 @st.cache_resource(show_spinner=False)
 def load_wide_and_groups() -> Tuple[pd.DataFrame, List[str], Dict[int, List[str]]]:
     if not os.path.exists(RAW_DATASET_CSV):
@@ -93,7 +59,41 @@ def load_wide_and_groups() -> Tuple[pd.DataFrame, List[str], Dict[int, List[str]
     return df_wide, symptom_cols, groups
 
 
+@st.cache_resource(show_spinner=False)
+def load_precautions_map(csv_path: str = PRECAUTIONS_CSV) -> dict[str, list[str]]:
+    """
+    Returns: { disease_name -> [prec1, prec2, ...] } with 'None' filtered out.
+    If file is missing or malformed, returns {}.
+    """
+    try:
+        if not os.path.exists(csv_path):
+            return {}
+        dfp = pd.read_csv(csv_path)
+        cols = {c.lower(): c for c in dfp.columns}
+        dz_col = cols.get("disease", "Disease")
+        prec_cols = [c for c in dfp.columns if str(c).lower().startswith("precaution")]
+        out: dict[str, list[str]] = {}
+        for _, r in dfp.iterrows():
+            dz = str(r.get(dz_col, "")).strip()
+            if not dz:
+                continue
+            vals: list[str] = []
+            for c in prec_cols:
+                v = r.get(c)
+                if pd.isna(v):
+                    continue
+                s = str(v).strip()
+                if not s or s.lower() == "none":
+                    continue
+                vals.append(s)
+            out[dz] = vals
+        return out
+    except Exception:
+        return {}
+
+
 df_wide, symptom_cols, sev_groups = load_wide_and_groups()
+precautions_map = load_precautions_map()
 
 
 # --------------------------
@@ -115,7 +115,7 @@ def ensure_state():
     if "df_filtered_rows" not in st.session_state:
         st.session_state.df_filtered_rows = len(df_wide)
     if "last_suggestions" not in st.session_state:
-        st.session_state.last_suggestions = []
+        st.session_state.last_suggestions = []  # List[(symptom, prevalence_float)] — we will display names only
 
 ensure_state()
 
@@ -142,23 +142,18 @@ def filtered_subset_for_current_selection() -> Tuple[pd.DataFrame, str]:
 def level_options_limited_by_pool(level_syms: List[str], df_filt: pd.DataFrame, already_selected: Set[str]) -> List[str]:
     """
     Keep only symptoms from this level that actually occur in the filtered pool
-    (prevalence > 0). Do not include items already selected at any level.
-    If that hides everything, fall back to level_syms.
+    (prevalence > 0), excluding anything already selected.
+    **No fallback**: if empty, return empty.
     """
-    if df_filt.empty:
-        return [s for s in level_syms if s not in already_selected]
+    if df_filt.empty or not level_syms:
+        return []
 
-    # Only keep columns that exist in df_filt and have non-zero prevalence
     cols_available = [c for c in level_syms if c in df_filt.columns]
     if not cols_available:
-        return [s for s in level_syms if s not in already_selected]
+        return []
 
     prev = df_filt[cols_available].astype("int8").mean(axis=0)
     keep = [c for c in cols_available if float(prev.get(c, 0.0)) > 0.0 and c not in already_selected]
-
-    # If everything would disappear, soften to full level (minus already selected)
-    if not keep:
-        keep = [s for s in level_syms if s not in already_selected]
     return sorted(keep, key=str.lower)
 
 
@@ -178,20 +173,20 @@ with left:
     # Build filtered subset *from confirmed selections so far*
     df_filt_live, note_live = filtered_subset_for_current_selection()
 
-    # Limit current level options to those present in the filtered subset
+    # Limit current level options to those present in the filtered subset (no fallback)
     level_syms = sev_groups.get(cur_level, [])
     already = union_selected(st.session_state.selected_by_level)
     limited_opts = level_options_limited_by_pool(level_syms, df_filt_live, already_selected=already)
 
+    # If that level has no symptoms at all, show nothing (no fallback)
     if not level_syms:
-        st.info("No symptoms tagged at this level. You can move to the next level.")
+        st.info("No symptoms tagged at this level.")
     elif not limited_opts:
-        st.info("Nothing plausible at this level given your current selections. You can move to the next level.")
+        st.info("No plausible options at this level given your current selections.")
 
     # Chips (only within limited options)
     prev = st.session_state.selected_by_level.get(cur_level, set())
     picked: Set[str] = set()
-
     cols = st.columns(4) if limited_opts else [st]
     for i, opt in enumerate(limited_opts):
         with cols[i % len(cols)]:
@@ -233,16 +228,14 @@ with left:
                 st.session_state.last_pred = (labels, probs)
                 st.session_state.last_features = used_feats
 
-            # Build suggestions for the next level (based on filtered subset)
-            next_level = max(1, cur_level - 1)
-            next_level_syms = sev_groups.get(next_level, [])
+            # Build suggestions across ALL levels (names only; we still compute off filtered subset)
             already2 = union_selected(st.session_state.selected_by_level)
             st.session_state.last_suggestions = suggest_additional_symptoms(
                 df_filtered=df_filt,
                 all_symptom_cols=symptom_cols,
                 already_selected=already2,
                 top_k=10,
-                restrict_to=next_level_syms if next_level_syms else None,
+                restrict_to=None,  # ← include all levels
             )
 
             st.rerun()
@@ -270,42 +263,52 @@ with left:
         if picks:
             st.write(f"Level {lvl}: " + ", ".join(pretty(p) for p in picks))
 
-    if st.session_state.last_suggestions:
+    # "You might also be experiencing" — show only if user has selected ≥1 symptom AND we have suggestions
+    if union_selected(st.session_state.selected_by_level) and st.session_state.last_suggestions:
         st.divider()
-        st.markdown("**You might also be experiencing (next level candidates)**")
-        sug_df = pd.DataFrame(
-            [{"Symptom": pretty(s), "Prevalence (filtered)": f"{p:.0%}"} for s, p in st.session_state.last_suggestions]
-        )
-        st.dataframe(sug_df, use_container_width=True, hide_index=True)
+        st.markdown("**You might also be experiencing**")
+
+        top5 = [pretty(s) for s, _ in st.session_state.last_suggestions[:5]]
+        if top5:
+            st.markdown("\n".join(f"{i}. {name}" for i, name in enumerate(top5, start=1)))
+
+
 
     st.divider()
-    st.slider(
-        "Confidence stop threshold",
-        min_value=0.5,
-        max_value=0.99,
-        value=float(st.session_state.conf_thresh),
-        step=0.01,
-        key="conf_thresh",
-        help="When the top predicted probability reaches this value, we’ll show a green confident banner.",
-    )
 
 with right:
-    st.subheader("Top predictions")
+    st.subheader("Top predictions (≥ 0.70)")
     if st.session_state.last_pred is None:
         st.info("No predictions yet. Press **Confirm Level …** to train and score based on your current confirmed selections.")
     else:
         labels, probs = st.session_state.last_pred
-        order = np.argsort(probs)[::-1]
-        table = pd.DataFrame(
-            {"Disease": [labels[i] for i in order[:5]], "Probability": [float(probs[i]) for i in order[:5]]}
-        )
-        st.table(table)
+        if probs.size:
+            order = np.argsort(probs)[::-1]
+            # Filter to predictions ≥ 0.70
+            rows = [(labels[i], float(probs[i])) for i in order if float(probs[i]) >= PREDICTION_DISPLAY_MIN]
+            if rows:
+                table = pd.DataFrame({"Disease": [d for d, _ in rows[:10]], "Probability": [p for _, p in rows[:10]]})
+                st.table(table)
+            else:
+                st.info(f"No predictions ≥ {PREDICTION_DISPLAY_MIN:.2f} yet.")
 
-        pmax = float(np.max(probs)) if probs.size else 0.0
-        if pmax >= float(st.session_state.conf_thresh):
-            st.success("We’re confident enough to stop here.")
+            # Confidence banner + precautions (top predicted disease)
+            pmax_idx = int(order[0])
+            top_disease = labels[pmax_idx]
+            pmax = float(probs[pmax_idx])
+
+            if pmax >= float(st.session_state.conf_thresh):
+                st.success("We’re confident enough to stop here.")
+                # Precautions for the top disease, if available
+                precs = precautions_map.get(top_disease, [])
+                if precs:
+                    st.markdown(f"**Precautions for {top_disease}:**")
+                    for i, ptxt in enumerate(precs, 1):
+                        st.write(f"{i}. {ptxt}")
+            else:
+                st.caption("Keep confirming lower-severity levels to refine the prediction.")
         else:
-            st.caption("Keep confirming lower-severity levels to refine the prediction.")
+            st.info("No predictions available with the current selection.")
 
         if st.session_state.last_features:
             with st.expander("Features used in the current model (present symptoms only)", expanded=False):
