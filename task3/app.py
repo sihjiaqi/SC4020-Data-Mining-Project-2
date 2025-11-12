@@ -30,7 +30,7 @@ from pipeline import (
 # --------------------------
 # App config
 # --------------------------
-st.set_page_config(page_title="Stage 1: Symptom-based Progressive Diagnosis", layout="wide")
+st.set_page_config(page_title="Symptom-based Progressive Diagnosis", layout="wide")
 
 RAW_DATASET_CSV = "data/disease_symptom/dataset.csv"
 SEVERITY_CSV    = "data/disease_symptom/Symptom-severity.csv"
