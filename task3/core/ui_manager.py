@@ -34,12 +34,50 @@ class UIManager:
         if "last_suggestions" not in s:
             s.last_suggestions = []  # list[(symptom, score_float)]
 
+        # new final-page state
+        if "finished" not in s:
+            s.finished = False
+        if "final_disease" not in s:
+            s.final_disease = None
+        if "final_prob" not in s:
+            s.final_prob = None
+
+    def _render_final_page(_self):
+        dz = st.session_state.final_disease
+        p = st.session_state.final_prob
+
+        st.title("Diagnosis summary")
+
+        if not dz:
+            st.info("No final diagnosis is available. Please start a new assessment.")
+        else:
+            st.success(f"Our model is confident that the most likely disease is: {dz}")
+            if p is not None:
+                st.write(f"Estimated confidence: {p:.2%}")
+
+            precs = _self.backend.precautions_for(dz)
+            if precs:
+                st.subheader("Suggested precautions")
+                for i, txt in enumerate(precs, 1):
+                    st.write(f"{i}. {txt}")
+
+        st.divider()
+        if st.button("Start a new assessment"):
+            # simple reset of all state
+            for key in list(st.session_state.keys()):
+                del st.session_state[key]
+            st.rerun()
+
     # ---------- main page ----------
     def run(_self):
         # Load (cached inside backend.data_manager)
         df_wide, symptom_cols, sev_groups, _ = _self.backend.data_manager.load_all()
 
         _self._ensure_state(df_wide_rows=len(df_wide))
+
+        if st.session_state.finished:
+            _self._render_final_page()
+            return
 
         st.title("Stage 1: Symptom-based Progressive Diagnosis")
         st.caption("Pick symptoms progressively from most severe to least severe. Confirm each level to continue.")
@@ -90,6 +128,13 @@ class UIManager:
                     st.session_state.last_pred = res["last_pred"]   # (labels, probs) or None
                     st.session_state.last_features = res["features_used"]
                     st.session_state.last_suggestions = res["suggestions"]
+
+                    # If the backend says we are confident, lock the flow and go to final page
+                    if res.get("confident"):
+                        st.session_state.finished = True
+                        st.session_state.final_disease = res.get("top_disease")
+                        st.session_state.final_prob = res.get("top_prob")
+
                     st.rerun()
 
             with c2:

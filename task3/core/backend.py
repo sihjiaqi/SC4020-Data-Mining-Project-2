@@ -1,5 +1,7 @@
 from __future__ import annotations
 from typing import Dict, Set
+import numpy as np
+
 
 class BackendLogic:
     def __init__(_self, data_manager, model_manager, target_col: str):
@@ -14,6 +16,7 @@ class BackendLogic:
     def _ensure_loaded(_self):
         if _self._loaded is None:
             _self._loaded = _self.data_manager.load_all()
+
 
     def precautions_for(_self, disease: str):
         _self._ensure_loaded()
@@ -61,7 +64,6 @@ class BackendLogic:
             "info_message": info,
         }
 
-    # --------- main action when confirming a level ----------
     def confirm_level(_self, level: int, picked: Set[str], selected_by_level: Dict[int, Set[str]], conf_thresh: float):
         _self._ensure_loaded()
         df_wide, symptom_cols, _, _ = _self._loaded
@@ -96,6 +98,18 @@ class BackendLogic:
 
         last_pred = None if probs is None else (labels, probs)
 
+        # decide if we are confident enough to stop
+        confident = False
+        top_disease = None
+        top_prob = None
+        if probs is not None and len(probs):
+            probs_arr = np.asarray(probs)
+            best_idx = int(np.argmax(probs_arr))
+            top_prob = float(probs_arr[best_idx])
+            top_disease = labels[best_idx]
+            if top_prob >= float(conf_thresh):
+                confident = True
+
         return {
             "selected_by_level": selected_by_level,
             "next_level": next_level,
@@ -104,4 +118,7 @@ class BackendLogic:
             "last_pred": last_pred,
             "features_used": features_used,
             "suggestions": suggestions,
+            "confident": confident,
+            "top_disease": top_disease,
+            "top_prob": top_prob,
         }
