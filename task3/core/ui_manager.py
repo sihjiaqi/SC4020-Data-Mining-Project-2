@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
+
 class UIManager:
     def __init__(_self, backend, default_conf_thresh: float, min_display_prob: float):
         _self.backend = backend
@@ -34,36 +35,59 @@ class UIManager:
         if "last_suggestions" not in s:
             s.last_suggestions = []  # list[(symptom, score_float)]
 
-        # new final-page state
+        # state for final summary page
         if "finished" not in s:
             s.finished = False
         if "final_disease" not in s:
             s.final_disease = None
         if "final_prob" not in s:
             s.final_prob = None
+        if "final_suggestions" not in s:
+            s.final_suggestions = []  # list[(symptom, score_float)]
 
+    # ---------- final summary page ----------
     def _render_final_page(_self):
         dz = st.session_state.final_disease
         p = st.session_state.final_prob
+        suggestions = st.session_state.final_suggestions or []
 
         st.title("Diagnosis summary")
 
         if not dz:
             st.info("No final diagnosis is available. Please start a new assessment.")
         else:
-            st.success(f"Our model is confident that the most likely disease is: {dz}")
+            # Big, separate disease prediction section
+            st.markdown("### Disease Prediction:")
+            st.markdown(
+                f"<h2 style='color:#d32f2f; font-weight:bold;'>{dz}</h2>",
+                unsafe_allow_html=True,
+            )
             if p is not None:
                 st.write(f"Estimated confidence: {p:.2%}")
 
-            precs = _self.backend.precautions_for(dz)
-            if precs:
-                st.subheader("Suggested precautions")
-                for i, txt in enumerate(precs, 1):
-                    st.write(f"{i}. {txt}")
+            # Two-column layout: symptoms vs precautions
+            left, right = st.columns(2)
+
+            with left:
+                st.subheader("Symptoms you may also have")
+                if suggestions:
+                    for i, (sym, _score) in enumerate(suggestions, start=1):
+                        st.write(f"{i}. {_self._pretty(sym)}")
+                else:
+                    st.write("No additional symptoms suggested.")
+
+            with right:
+                st.subheader("Precautions")
+                precs = _self.backend.precautions_for(dz)
+                if precs:
+                    for i, txt in enumerate(precs, start=1):
+                        st.write(f"{i}. {txt}")
+                else:
+                    st.write("No specific precautions available.")
 
         st.divider()
         if st.button("Start a new assessment"):
-            # simple reset of all state
+            # reset all state and go back to main flow
             for key in list(st.session_state.keys()):
                 del st.session_state[key]
             st.rerun()
@@ -75,6 +99,7 @@ class UIManager:
 
         _self._ensure_state(df_wide_rows=len(df_wide))
 
+        # If we have a finished diagnosis, show the final summary page only
         if st.session_state.finished:
             _self._render_final_page()
             return
@@ -87,7 +112,11 @@ class UIManager:
         # ----- LEFT: levels & selections -----
         with left:
             cur_level = int(st.session_state.stage_level)
-            title = f"Level {cur_level} " + ("(most severe)" if cur_level == 7 else "(least severe)" if cur_level == 1 else "(moderate)")
+            title = f"Level {cur_level} " + (
+                "(most severe)" if cur_level == 7
+                else "(least severe)" if cur_level == 1
+                else "(moderate)"
+            )
             st.subheader(title)
 
             view = _self.backend.build_level_view(
@@ -95,18 +124,22 @@ class UIManager:
                 selected_by_level=st.session_state.selected_by_level,
             )
 
-            # Show info if needed
+            # Info message if needed
             if view["info_message"]:
                 st.info(view["info_message"])
 
-            # Chips
+            # Symptom chips
             prev = st.session_state.selected_by_level.get(cur_level, set())
             picked: Set[str] = set()
             opts = view["limited_options"]
             cols = st.columns(4) if opts else [st]
             for i, opt in enumerate(opts):
                 with cols[i % len(cols)]:
-                    checked = st.checkbox(_self._pretty(opt), value=(opt in prev), key=f"chip_{cur_level}_{opt}")
+                    checked = st.checkbox(
+                        _self._pretty(opt),
+                        value=(opt in prev),
+                        key=f"chip_{cur_level}_{opt}",
+                    )
                     if checked:
                         picked.add(opt)
 
@@ -120,7 +153,7 @@ class UIManager:
                         conf_thresh=float(st.session_state.conf_thresh),
                     )
 
-                    # Reflect into session_state
+                    # Reflect backend result into session_state
                     st.session_state.selected_by_level = res["selected_by_level"]
                     st.session_state.stage_level = res["next_level"]
                     st.session_state.filter_note = res["filter_note"]
@@ -129,12 +162,12 @@ class UIManager:
                     st.session_state.last_features = res["features_used"]
                     st.session_state.last_suggestions = res["suggestions"]
 
-                    # If the backend says we are confident, lock the flow and go to final page
+                    # If backend signals we are confident, lock and jump to final page
                     if res.get("confident"):
                         st.session_state.finished = True
                         st.session_state.final_disease = res.get("top_disease")
                         st.session_state.final_prob = res.get("top_prob")
-
+                        st.session_state.final_suggestions = res.get("suggestions", [])
                     st.rerun()
 
             with c2:
@@ -151,6 +184,10 @@ class UIManager:
                     st.session_state.filter_note = "No present symptoms selected yet."
                     st.session_state.df_filtered_rows = len(df_wide)
                     st.session_state.last_suggestions = []
+                    st.session_state.finished = False
+                    st.session_state.final_disease = None
+                    st.session_state.final_prob = None
+                    st.session_state.final_suggestions = []
                     st.rerun()
 
             st.divider()
@@ -174,18 +211,32 @@ class UIManager:
         with right:
             st.subheader("Top predictions (≥ 0.70)")
             if st.session_state.last_pred is None:
-                st.info("No predictions yet. Press **Confirm Level …** to train and score based on your current confirmed selections.")
+                st.info(
+                    "No predictions yet. Press **Confirm Level …** to train and "
+                    "score based on your current confirmed selections."
+                )
             else:
                 labels, probs = st.session_state.last_pred
                 if getattr(probs, "size", 0):
                     order = np.argsort(probs)[::-1]
-                    rows = [(labels[i], float(probs[i])) for i in order if float(probs[i]) >= _self.min_display_prob]
+                    rows = [
+                        (labels[i], float(probs[i]))
+                        for i in order
+                        if float(probs[i]) >= _self.min_display_prob
+                    ]
                     if rows:
-                        table = pd.DataFrame({"Disease": [d for d, _ in rows[:10]], "Probability": [p for _, p in rows[:10]]})
+                        table = pd.DataFrame(
+                            {
+                                "Disease": [d for d, _ in rows[:10]],
+                                "Probability": [p for _, p in rows[:10]],
+                            }
+                        )
                         st.table(table)
                     else:
                         st.info(f"No predictions ≥ {_self.min_display_prob:.2f} yet.")
 
+                    # This branch is now mostly for debugging, because once
+                    # we are confident we immediately jump to the final page.
                     pmax_idx = int(order[0])
                     top_disease = labels[pmax_idx]
                     pmax = float(probs[pmax_idx])
@@ -203,11 +254,23 @@ class UIManager:
                     st.info("No predictions available with the current selection.")
 
                 if st.session_state.last_features:
-                    with st.expander("Features used in the current model (present symptoms only)", expanded=False):
-                        st.write(", ".join(_self._pretty(f) for f in sorted(st.session_state.last_features, key=str.lower)))
+                    with st.expander(
+                            "Features used in the current model (present symptoms only)",
+                            expanded=False,
+                    ):
+                        st.write(
+                            ", ".join(
+                                _self._pretty(f)
+                                for f in sorted(st.session_state.last_features, key=str.lower)
+                            )
+                        )
 
             st.divider()
             st.caption("Row filter status")
             note_live = _self.backend.live_filter_note(st.session_state.selected_by_level)
-            st.write(note_live if any(st.session_state.selected_by_level.values()) else st.session_state.filter_note)
+            st.write(
+                note_live
+                if any(st.session_state.selected_by_level.values())
+                else st.session_state.filter_note
+            )
             st.write(f"Rows remaining after filter: **{st.session_state.df_filtered_rows}**")
