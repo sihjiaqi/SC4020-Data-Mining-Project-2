@@ -44,7 +44,7 @@ backend = BackendLogic(
     data_manager=data_mgr,
     model_manager=model_mgr,
     target_col=TARGET_COL,
-    department_router=department_router,   # <-- make sure this is here
+    department_router=department_router,
 )
 
 ui = UIManager(
