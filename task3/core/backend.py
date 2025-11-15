@@ -7,7 +7,7 @@ class BackendLogic:
         _self.data_manager = data_manager
         _self.model_manager = model_manager
         _self.target_col = str(target_col)
-        _self.department_router = department_router  # <-- NEW
+        _self.department_router = department_router
 
         # Cache loaded artifacts
         _self._loaded = None  # (df_wide, symptom_cols, sev_groups, precautions_map)
@@ -121,7 +121,7 @@ class BackendLogic:
             if top_prob >= float(conf_thresh):
                 confident = True
 
-        # NEW: call LLM router if confident
+        # call LLM router if confident
         triage_department = None
         if confident and top_disease is not None:
             triage_department = _self.triage_department(
@@ -140,7 +140,7 @@ class BackendLogic:
             "confident": confident,
             "top_disease": top_disease,
             "top_prob": top_prob,
-            "triage_department": triage_department,   # <-- NEW
+            "triage_department": triage_department,
         }
 
         # --------- triage helper using LLM router ----------

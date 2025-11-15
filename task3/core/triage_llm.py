@@ -58,7 +58,6 @@ class DepartmentLLMRouter:
         ]
 
         # Build the static part of the prompt (without disease/symptoms yet)
-        # Build the static part of the prompt (without disease/symptoms yet)
         depts_block = "\n".join(f"- {d}" for d in self.departments)
         self.base_prompt_header = f"""
 You are a medical referral classifier.
@@ -209,9 +208,9 @@ Department:
             # Memory-friendly load for Streamlit Cloud CPU
             self.model = AutoModelForCausalLM.from_pretrained(
                 self.model_name,
-                torch_dtype="auto",          # let HF choose minimal safe dtype
-                low_cpu_mem_usage=True,      # avoid huge peak RAM
-                device_map="cpu",            # force everything on CPU
+                torch_dtype="auto",
+                low_cpu_mem_usage=True,      # avoid huge peak RAM for st cloud
+                device_map="cpu",
             )
             self.model.eval()
             self._model_loaded_ok = True

@@ -19,7 +19,8 @@ TARGET_COL      = "Disease"
 
 TEST_SIZE   = 0.20
 RANDOM_SEED = 42
-HIT_THRESH  = 0.70          # prob threshold to count as a "confident prediction"
+# prob threshold to count as a "confident prediction"
+HIT_THRESH  = 0.70
 
 OUTPUT_DIR   = "task3/output"
 OUTPUT_CSV   = os.path.join(OUTPUT_DIR, "sequential_eval.csv")
