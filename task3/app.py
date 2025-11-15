@@ -1,5 +1,6 @@
 from __future__ import annotations
 import streamlit as st
+import torch
 
 from core.ui_manager import UIManager
 from core.backend import BackendLogic
@@ -7,6 +8,8 @@ from core.data_manager import DataManager
 from core.model_manager import ModelManager
 from core.model_trainer import ModelTrainer
 from core.predictors.symptom_predictor import SymptomPredictor
+from core.triage_llm import DepartmentLLMRouter
+
 
 # ---- Paths (same as your current ones) ----
 RAW_DATASET_CSV = "data/disease_symptom/dataset.csv"
@@ -31,10 +34,17 @@ symptom_pred = SymptomPredictor()
 trainer = ModelTrainer()
 model_mgr = ModelManager(trainer=trainer, symptom_pred=symptom_pred, min_display_prob=PREDICTION_DISPLAY_MIN)
 
+department_router = DepartmentLLMRouter(
+    model_name="Qwen/Qwen2-7B-Instruct",
+    use_llm=True,
+    device="cpu",
+)
+
 backend = BackendLogic(
     data_manager=data_mgr,
     model_manager=model_mgr,
     target_col=TARGET_COL,
+    department_router=department_router,   # <-- make sure this is here
 )
 
 ui = UIManager(

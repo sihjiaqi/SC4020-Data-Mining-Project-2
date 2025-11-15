@@ -1,13 +1,13 @@
 from __future__ import annotations
-from typing import Dict, Set
+from typing import Dict, Set, List, Optional
 import numpy as np
 
-
 class BackendLogic:
-    def __init__(_self, data_manager, model_manager, target_col: str):
+    def __init__(_self, data_manager, model_manager, target_col: str, department_router=None):
         _self.data_manager = data_manager
         _self.model_manager = model_manager
         _self.target_col = str(target_col)
+        _self.department_router = department_router  # <-- NEW
 
         # Cache loaded artifacts
         _self._loaded = None  # (df_wide, symptom_cols, sev_groups, precautions_map)
@@ -17,11 +17,22 @@ class BackendLogic:
         if _self._loaded is None:
             _self._loaded = _self.data_manager.load_all()
 
-
     def precautions_for(_self, disease: str):
         _self._ensure_loaded()
         _, _, _, prec_map = _self._loaded
         return prec_map.get(disease, [])
+
+    # --------- triage helper (LLM) ----------
+    def triage_department(_self, disease: str, selected_symptoms: Set[str]) -> str:
+        """
+        Use the small Hugging Face LLM router if available.
+        If not configured, default to 'General Practice'.
+        """
+        if _self.department_router is None or not disease:
+            return "General Practice"
+        # symptoms are encoded as feature names; convert to a nice list
+        symptoms_list = sorted(list(selected_symptoms))
+        return _self.department_router.route_department(disease, symptoms_list)
 
     # --------- live helpers ----------
     def live_filter_note(_self, selected_by_level: Dict[int, Set[str]]) -> str:
@@ -110,6 +121,14 @@ class BackendLogic:
             if top_prob >= float(conf_thresh):
                 confident = True
 
+        # NEW: call LLM router if confident
+        triage_department = None
+        if confident and top_disease is not None:
+            triage_department = _self.triage_department(
+                disease=top_disease,
+                selected_symptoms=selected,
+            )
+
         return {
             "selected_by_level": selected_by_level,
             "next_level": next_level,
@@ -121,4 +140,15 @@ class BackendLogic:
             "confident": confident,
             "top_disease": top_disease,
             "top_prob": top_prob,
+            "triage_department": triage_department,   # <-- NEW
         }
+
+        # --------- triage helper using LLM router ----------
+    def route_department(_self, disease: str, symptoms: Set[str]) -> str:
+        """
+        Use the LLM-based router to pick a department.
+        """
+        if _self.department_router is None:
+            return "General Practice"
+        # symptoms is a set of internal names like "chest_pain"
+        return _self.department_router.route_department(disease, sorted(symptoms))

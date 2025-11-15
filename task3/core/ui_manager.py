@@ -34,7 +34,11 @@ class UIManager:
             s.df_filtered_rows = int(df_wide_rows)
         if "last_suggestions" not in s:
             s.last_suggestions = []  # list[(symptom, score_float)]
+        if "final_department" not in s:
+            s.final_department = None
 
+        if "final_department" not in s:
+            s.final_department = None
         # state for final summary page
         if "finished" not in s:
             s.finished = False
@@ -50,6 +54,7 @@ class UIManager:
         dz = st.session_state.final_disease
         p = st.session_state.final_prob
         suggestions = st.session_state.final_suggestions or []
+        dept = st.session_state.final_department
 
         st.title("Diagnosis summary")
 
@@ -65,9 +70,13 @@ class UIManager:
             if p is not None:
                 st.write(f"Estimated confidence: {p:.2%}")
 
-            # Two-column layout: symptoms vs precautions
-            left, right = st.columns(2)
+            st.markdown("### Suggested Department")
+            if dept:
+                st.write(dept)
+            else:
+                st.write("Not available.")
 
+            left, right = st.columns(2)
             with left:
                 st.subheader("Symptoms you may also have")
                 if suggestions:
@@ -84,6 +93,10 @@ class UIManager:
                         st.write(f"{i}. {txt}")
                 else:
                     st.write("No specific precautions available.")
+
+            # Two-column layout: symptoms vs precautions
+            left, right = st.columns(2)
+
 
         st.divider()
         if st.button("Start a new assessment"):
@@ -163,11 +176,21 @@ class UIManager:
                     st.session_state.last_suggestions = res["suggestions"]
 
                     # If backend signals we are confident, lock and jump to final page
+                    # NEW: if confident, compute triage department with LLM
                     if res.get("confident"):
                         st.session_state.finished = True
                         st.session_state.final_disease = res.get("top_disease")
                         st.session_state.final_prob = res.get("top_prob")
                         st.session_state.final_suggestions = res.get("suggestions", [])
+
+                        # gather all confirmed symptoms into a set
+                        all_selected = set().union(*st.session_state.selected_by_level.values())
+                        dept = _self.backend.route_department(
+                            disease=st.session_state.final_disease or "",
+                            symptoms=all_selected,
+                        )
+                        st.session_state.final_department = dept
+
                     st.rerun()
 
             with c2:
