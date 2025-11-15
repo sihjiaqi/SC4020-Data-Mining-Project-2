@@ -1,73 +1,71 @@
 itemset,size,support,count
-fatigue,1,0.4146341463414634,34
-vomiting,1,0.4024390243902439,33
-fever,1,0.2926829268292683,24
-pain,1,0.2804878048780488,23
-abdominal pain,1,0.24390243902439024,20
-loss of appetite,1,0.24390243902439024,20
-headache,1,0.24390243902439024,20
+vomiting,1,0.4146341463414634,34
+fatigue,1,0.3902439024390244,32
+fever,1,0.3048780487804878,25
+abdominal pain,1,0.2682926829268293,22
+pain,1,0.2682926829268293,22
+headache,1,0.23170731707317074,19
 nausea,1,0.23170731707317074,19
-"fatigue, fever",2,0.21951219512195122,18
-"nausea, vomiting",2,0.21951219512195122,18
-"abdominal pain, vomiting",2,0.1951219512195122,16
+loss of appetite,1,0.23170731707317074,19
+"abdominal pain, vomiting",2,0.21951219512195122,18
+"fatigue, fever",2,0.2073170731707317,17
+"nausea, vomiting",2,0.2073170731707317,17
 yellowish skin,1,0.18292682926829268,15
-"fatigue, loss of appetite",2,0.17073170731707318,14
 yellowing of eyes,1,0.17073170731707318,14
-"loss of appetite, vomiting",2,0.17073170731707318,14
 chills,1,0.17073170731707318,14
-"loss of appetite, yellowing of eyes",2,0.17073170731707318,14
+skin rash,1,0.17073170731707318,14
 itching,1,0.17073170731707318,14
-"fatigue, vomiting",2,0.17073170731707318,14
-skin rash,1,0.15853658536585366,13
+"fatigue, vomiting",2,0.15853658536585366,13
+"loss of appetite, yellowing of eyes",2,0.15853658536585366,13
+"abdominal pain, yellowish skin",2,0.15853658536585366,13
+"fatigue, loss of appetite",2,0.15853658536585366,13
+"loss of appetite, vomiting",2,0.15853658536585366,13
 "fever, vomiting",2,0.15853658536585366,13
-"headache, vomiting",2,0.14634146341463414,12
-abnormal urine,1,0.14634146341463414,12
-"abdominal pain, yellowish skin",2,0.14634146341463414,12
-"chills, fever",2,0.14634146341463414,12
-sweating,1,0.14634146341463414,12
 joint pain,1,0.14634146341463414,12
-"fever, pain",2,0.13414634146341464,11
+abnormal urine,1,0.14634146341463414,12
 "pain, vomiting",2,0.13414634146341464,11
-"fatigue, nausea",2,0.13414634146341464,11
-"yellowing of eyes, yellowish skin",2,0.13414634146341464,11
-"loss of appetite, nausea",2,0.13414634146341464,11
-"loss of appetite, yellowing of eyes, yellowish skin",3,0.13414634146341464,11
+"abdominal pain, loss of appetite",2,0.13414634146341464,11
+"headache, vomiting",2,0.13414634146341464,11
 "vomiting, yellowish skin",2,0.13414634146341464,11
+"yellowing of eyes, yellowish skin",2,0.13414634146341464,11
+"fever, pain",2,0.13414634146341464,11
+"abdominal pain, vomiting, yellowish skin",3,0.13414634146341464,11
+"loss of appetite, yellowing of eyes, yellowish skin",3,0.13414634146341464,11
+"chills, fever",2,0.13414634146341464,11
+"fatigue, nausea",2,0.13414634146341464,11
 "loss of appetite, yellowish skin",2,0.13414634146341464,11
-"fever, headache",2,0.12195121951219512,10
-"chills, fatigue, fever",3,0.12195121951219512,10
-dizziness,1,0.12195121951219512,10
-"chills, fever, pain",3,0.12195121951219512,10
-"abdominal pain, vomiting, yellowish skin",3,0.12195121951219512,10
-"loss of appetite, nausea, vomiting",3,0.12195121951219512,10
-"fatigue, fever, vomiting",3,0.12195121951219512,10
-"loss of appetite, vomiting, yellowing of eyes",3,0.12195121951219512,10
-"headache, nausea, vomiting",3,0.12195121951219512,10
-"fatigue, loss of appetite, yellowing of eyes",3,0.12195121951219512,10
-"fatigue, nausea, vomiting",3,0.12195121951219512,10
-"vomiting, yellowing of eyes",2,0.12195121951219512,10
-"chills, fatigue",2,0.12195121951219512,10
-"fatigue, headache",2,0.12195121951219512,10
-diarrhoea,1,0.12195121951219512,10
-muscle weakness,1,0.12195121951219512,10
-"fatigue, yellowing of eyes",2,0.12195121951219512,10
-"headache, nausea",2,0.12195121951219512,10
-"abdominal pain, loss of appetite",2,0.12195121951219512,10
 cough,1,0.12195121951219512,10
+dizziness,1,0.12195121951219512,10
+sweating,1,0.12195121951219512,10
+muscle weakness,1,0.12195121951219512,10
+"abdominal pain, yellowing of eyes",2,0.12195121951219512,10
+"chills, fatigue",2,0.12195121951219512,10
 "chills, pain",2,0.12195121951219512,10
-"nausea, yellowish skin",2,0.10975609756097561,9
-"abdominal pain, loss of appetite, vomiting",3,0.10975609756097561,9
-"fever, nausea",2,0.10975609756097561,9
-"nausea, yellowing of eyes, yellowish skin",3,0.10975609756097561,9
-"abdominal pain, nausea",2,0.10975609756097561,9
-"loss of appetite, nausea, yellowing of eyes",3,0.10975609756097561,9
+"vomiting, yellowing of eyes",2,0.12195121951219512,10
+"fatigue, yellowing of eyes",2,0.12195121951219512,10
+"abdominal pain, itching",2,0.12195121951219512,10
+"abdominal pain, abnormal urine",2,0.12195121951219512,10
+"loss of appetite, nausea",2,0.12195121951219512,10
+"chills, fatigue, fever",3,0.12195121951219512,10
+"fatigue, headache",2,0.10975609756097561,9
 "nausea, yellowing of eyes",2,0.10975609756097561,9
-"abdominal pain, itching",2,0.10975609756097561,9
-"abdominal pain, nausea, vomiting",3,0.10975609756097561,9
-"fever, nausea, vomiting",3,0.10975609756097561,9
-"loss of appetite, nausea, yellowish skin",3,0.10975609756097561,9
-"fatigue, yellowish skin",2,0.10975609756097561,9
 "abnormal urine, yellowish skin",2,0.10975609756097561,9
-"abdominal pain, fatigue",2,0.10975609756097561,9
+"headache, nausea",2,0.10975609756097561,9
 "fever, loss of appetite",2,0.10975609756097561,9
-"loss of appetite, nausea, yellowing of eyes, yellowish skin",4,0.10975609756097561,9
+"abdominal pain, fatigue",2,0.10975609756097561,9
+"headache, nausea, vomiting",3,0.10975609756097561,9
+"fever, nausea",2,0.10975609756097561,9
+"abdominal pain, nausea",2,0.10975609756097561,9
+"abdominal pain, loss of appetite, yellowing of eyes",3,0.10975609756097561,9
+"fatigue, fever, vomiting",3,0.10975609756097561,9
+"abdominal pain, abnormal urine, yellowish skin",3,0.10975609756097561,9
+"fever, nausea, vomiting",3,0.10975609756097561,9
+"abdominal pain, loss of appetite, yellowish skin",3,0.10975609756097561,9
+"abdominal pain, loss of appetite, vomiting",3,0.10975609756097561,9
+"chills, fever, pain",3,0.10975609756097561,9
+"abdominal pain, yellowing of eyes, yellowish skin",3,0.10975609756097561,9
+"loss of appetite, vomiting, yellowing of eyes",3,0.10975609756097561,9
+"fatigue, loss of appetite, yellowing of eyes",3,0.10975609756097561,9
+"fatigue, nausea, vomiting",3,0.10975609756097561,9
+"abdominal pain, nausea, vomiting",3,0.10975609756097561,9
+"abdominal pain, loss of appetite, yellowing of eyes, yellowish skin",4,0.10975609756097561,9
