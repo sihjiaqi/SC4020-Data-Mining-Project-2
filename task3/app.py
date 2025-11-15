@@ -35,7 +35,7 @@ trainer = ModelTrainer()
 model_mgr = ModelManager(trainer=trainer, symptom_pred=symptom_pred, min_display_prob=PREDICTION_DISPLAY_MIN)
 
 department_router = DepartmentLLMRouter(
-    model_name="Qwen/Qwen2-7B-Instruct",
+    model_name="TinyLlama/TinyLlama-1.1B-Chat-v1.0",
     use_llm=True,
     device="cpu",
 )
