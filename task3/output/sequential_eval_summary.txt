@@ -1,0 +1,18 @@
+Sequential Evaluation Summary
+================================
+Total test cases: 984
+Cases with a confident prediction (prob ≥ 0.70): 932
+
+Classification metrics on cases with a confident prediction:
+- Accuracy:       100.00%
+- Precision (macro): 100.00%
+- Recall (macro):    100.00%
+- F1 (macro):        100.00%
+- F1 (micro):        100.00%
+
+Hit-based metric (did we ever confidently reach the correct disease?):
+- Hit accuracy (any step, correct & prob ≥ 0.70): 94.72%
+
+Among cases where a confident *correct* hit was found:
+- Average % of symptoms used before first hit: 37.07%
+- Median  % of symptoms used before first hit: 33.33%

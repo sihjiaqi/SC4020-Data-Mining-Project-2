@@ -1,0 +1,985 @@
+test_row,true_disease,n_present_symptoms,first_hit_step,first_hit_severity_level,first_hit_prob,first_hit_pred_disease,hit_found,conf_step,conf_severity_level,conf_prob,conf_pred_disease,confident_pred_made
+0,Hypertension,4,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+1,Drug Reaction,5,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+2,Dimorphic hemmorhoids(piles),4,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+3,Hyperthyroidism,10,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+4,Osteoarthristis,5,2.0,3.0,1.0,Osteoarthristis,True,2.0,3.0,1.0,Osteoarthristis,True
+5,Fungal infection,4,1.0,6.0,1.0,Fungal infection,True,1.0,6.0,1.0,Fungal infection,True
+6,Common Cold,16,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+7,Hepatitis B,12,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+8,Pneumonia,10,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+9,AIDS,4,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+10,Drug Reaction,4,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+11,Dimorphic hemmorhoids(piles),4,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+12,Tuberculosis,15,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+13,Hypoglycemia,12,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+14,Pneumonia,11,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+15,Gastroenteritis,3,3.0,4.0,1.0,Gastroenteritis,True,3.0,4.0,1.0,Gastroenteritis,True
+16,Migraine,9,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+17,Diabetes,10,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+18,Jaundice,7,5.0,3.0,1.0,Jaundice,True,5.0,3.0,1.0,Jaundice,True
+19,Fungal infection,3,1.0,4.0,1.0,Fungal infection,True,1.0,4.0,1.0,Fungal infection,True
+20,Hepatitis D,9,,,,,False,,,,,False
+21,AIDS,4,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+22,Dimorphic hemmorhoids(piles),5,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+23,AIDS,4,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+24,Tuberculosis,16,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+25,Peptic ulcer diseae,5,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+26,Common Cold,16,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+27,Typhoid,11,4.0,5.0,1.0,Typhoid,True,4.0,5.0,1.0,Typhoid,True
+28,Hepatitis E,12,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+29,Hepatitis C,6,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+30,Jaundice,7,6.0,3.0,1.0,Jaundice,True,6.0,3.0,1.0,Jaundice,True
+31,Osteoarthristis,5,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+32,Peptic ulcer diseae,5,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+33,Cervical spondylosis,5,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+34,Hypothyroidism,13,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+35,Heart attack,4,,,,,False,,,,,False
+36,Arthritis,4,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+37,Cervical spondylosis,5,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+38,Hepatitis C,6,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+39,Bronchial Asthma,5,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+40,Allergy,4,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+41,GERD,6,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+42,Varicose veins,6,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+43,Tuberculosis,16,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+44,Varicose veins,7,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+45,Urinary tract infection,4,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+46,hepatitis A,10,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+47,Hepatitis E,13,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+48,Impetigo,4,3.0,3.0,1.0,Impetigo,True,3.0,3.0,1.0,Impetigo,True
+49,Paralysis (brain hemorrhage),4,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+50,Varicose veins,7,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+51,Hypertension,5,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+52,Allergy,3,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+53,Migraine,8,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+54,Diabetes,9,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+55,Paralysis (brain hemorrhage),4,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+56,Heart attack,3,,,,,False,,,,,False
+57,Gastroenteritis,4,3.0,4.0,1.0,Gastroenteritis,True,3.0,4.0,1.0,Gastroenteritis,True
+58,Urinary tract infection,3,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+59,Heart attack,4,,,,,False,,,,,False
+60,Hepatitis B,12,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+61,(vertigo) Paroymsal  Positional Vertigo,5,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+62,Hypothyroidism,13,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+63,Gastroenteritis,4,3.0,4.0,1.0,Gastroenteritis,True,3.0,4.0,1.0,Gastroenteritis,True
+64,Hepatitis C,6,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+65,Common Cold,17,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+66,(vertigo) Paroymsal  Positional Vertigo,5,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+67,Pneumonia,11,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+68,hepatitis A,11,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+69,Hypoglycemia,12,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+70,Arthritis,5,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+71,Varicose veins,6,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+72,Hypoglycemia,11,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+73,GERD,6,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+74,Paralysis (brain hemorrhage),3,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+75,Acne,3,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+76,Cervical spondylosis,5,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+77,Migraine,9,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+78,Hepatitis B,11,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+79,Gastroenteritis,4,3.0,4.0,1.0,Gastroenteritis,True,3.0,4.0,1.0,Gastroenteritis,True
+80,Psoriasis,6,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+81,Hypoglycemia,11,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+82,Hypoglycemia,11,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+83,Allergy,4,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+84,Hepatitis B,11,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+85,Hepatitis C,5,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+86,Migraine,8,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+87,Bronchial Asthma,6,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+88,(vertigo) Paroymsal  Positional Vertigo,6,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+89,Typhoid,10,5.0,4.0,1.0,Typhoid,True,5.0,4.0,1.0,Typhoid,True
+90,Typhoid,11,4.0,5.0,1.0,Typhoid,True,4.0,5.0,1.0,Typhoid,True
+91,Tuberculosis,16,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+92,Dengue,14,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+93,Acne,4,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+94,Hepatitis E,13,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+95,Impetigo,5,2.0,4.0,1.0,Impetigo,True,2.0,4.0,1.0,Impetigo,True
+96,Diabetes,9,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+97,Jaundice,7,5.0,3.0,1.0,Jaundice,True,5.0,3.0,1.0,Jaundice,True
+98,Drug Reaction,5,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+99,Hypothyroidism,12,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+100,Jaundice,7,6.0,3.0,1.0,Jaundice,True,6.0,3.0,1.0,Jaundice,True
+101,(vertigo) Paroymsal  Positional Vertigo,6,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+102,Hepatitis C,6,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+103,Chicken pox,11,7.0,3.0,1.0,Chicken pox,True,7.0,3.0,1.0,Chicken pox,True
+104,Hypothyroidism,12,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+105,Heart attack,3,,,,,False,,,,,False
+106,hepatitis A,10,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+107,Hyperthyroidism,11,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+108,Fungal infection,4,1.0,6.0,1.0,Fungal infection,True,1.0,6.0,1.0,Fungal infection,True
+109,Jaundice,8,6.0,3.0,1.0,Jaundice,True,6.0,3.0,1.0,Jaundice,True
+110,Migraine,9,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+111,Pneumonia,11,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+112,Hyperthyroidism,11,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+113,Alcoholic hepatitis,6,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+114,Hypothyroidism,13,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+115,AIDS,4,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+116,Tuberculosis,15,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+117,Urinary tract infection,4,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+118,Heart attack,3,,,,,False,,,,,False
+119,Allergy,4,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+120,Osteoarthristis,6,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+121,Hypertension,5,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+122,Hepatitis E,13,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+123,Common Cold,17,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+124,Hepatitis E,12,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+125,Arthritis,4,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+126,Acne,3,1.0,2.0,1.0,Acne,True,1.0,2.0,1.0,Acne,True
+127,Acne,4,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+128,Gastroenteritis,3,2.0,4.0,1.0,Gastroenteritis,True,2.0,4.0,1.0,Gastroenteritis,True
+129,Varicose veins,7,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+130,Arthritis,4,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+131,Malaria,8,7.0,3.0,1.0,Malaria,True,7.0,3.0,1.0,Malaria,True
+132,Pneumonia,10,3.0,5.0,1.0,Pneumonia,True,3.0,5.0,1.0,Pneumonia,True
+133,Tuberculosis,16,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+134,Migraine,8,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+135,Hepatitis E,13,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+136,Psoriasis,5,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+137,Heart attack,4,,,,,False,,,,,False
+138,Impetigo,5,2.0,4.0,1.0,Impetigo,True,2.0,4.0,1.0,Impetigo,True
+139,Heart attack,4,,,,,False,,,,,False
+140,AIDS,4,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+141,Varicose veins,6,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+142,Pneumonia,10,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+143,Psoriasis,5,1.0,3.0,1.0,Psoriasis,True,1.0,3.0,1.0,Psoriasis,True
+144,Hypoglycemia,12,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+145,GERD,6,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+146,Common Cold,16,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+147,Hyperthyroidism,11,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+148,Typhoid,11,4.0,5.0,1.0,Typhoid,True,4.0,5.0,1.0,Typhoid,True
+149,Urinary tract infection,4,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+150,Dimorphic hemmorhoids(piles),5,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+151,Chicken pox,10,6.0,3.0,1.0,Chicken pox,True,6.0,3.0,1.0,Chicken pox,True
+152,Drug Reaction,5,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+153,AIDS,4,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+154,Diabetes,9,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+155,Migraine,8,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+156,Impetigo,5,2.0,4.0,1.0,Impetigo,True,2.0,4.0,1.0,Impetigo,True
+157,Varicose veins,7,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+158,Hepatitis C,5,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+159,Hepatitis C,5,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+160,Osteoarthristis,6,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+161,Paralysis (brain hemorrhage),4,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+162,GERD,6,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+163,Heart attack,4,,,,,False,,,,,False
+164,Hepatitis C,5,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+165,Tuberculosis,15,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+166,Typhoid,11,4.0,5.0,1.0,Typhoid,True,4.0,5.0,1.0,Typhoid,True
+167,Malaria,8,7.0,3.0,1.0,Malaria,True,7.0,3.0,1.0,Malaria,True
+168,Hepatitis E,13,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+169,Varicose veins,7,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+170,Hypertension,5,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+171,Bronchial Asthma,5,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+172,Dengue,13,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+173,Migraine,8,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+174,Gastroenteritis,4,3.0,4.0,1.0,Gastroenteritis,True,3.0,4.0,1.0,Gastroenteritis,True
+175,Psoriasis,6,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+176,Allergy,4,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+177,Common Cold,17,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+178,Pneumonia,11,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+179,Alcoholic hepatitis,7,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+180,Hypoglycemia,11,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+181,Common Cold,17,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+182,Fungal infection,3,1.0,6.0,1.0,Fungal infection,True,1.0,6.0,1.0,Fungal infection,True
+183,Allergy,4,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+184,Dengue,14,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+185,GERD,6,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+186,Drug Reaction,5,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+187,Psoriasis,6,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+188,Dengue,14,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+189,Typhoid,11,4.0,5.0,1.0,Typhoid,True,4.0,5.0,1.0,Typhoid,True
+190,(vertigo) Paroymsal  Positional Vertigo,6,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+191,Typhoid,11,4.0,5.0,1.0,Typhoid,True,4.0,5.0,1.0,Typhoid,True
+192,Urinary tract infection,3,1.0,6.0,1.0,Urinary tract infection,True,1.0,6.0,1.0,Urinary tract infection,True
+193,Peptic ulcer diseae,5,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+194,Hepatitis C,5,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+195,Alcoholic hepatitis,7,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+196,Tuberculosis,16,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+197,Osteoarthristis,6,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+198,hepatitis A,10,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+199,Hypothyroidism,13,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+200,(vertigo) Paroymsal  Positional Vertigo,6,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+201,Hepatitis B,12,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+202,hepatitis A,11,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+203,(vertigo) Paroymsal  Positional Vertigo,5,3.0,4.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,3.0,4.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+204,Hepatitis D,9,,,,,False,,,,,False
+205,Varicose veins,7,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+206,Osteoarthristis,6,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+207,Hepatitis E,13,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+208,Bronchial Asthma,5,5.0,4.0,1.0,Bronchial Asthma,True,5.0,4.0,1.0,Bronchial Asthma,True
+209,Diabetes,10,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+210,Hepatitis D,9,,,,,False,,,,,False
+211,Allergy,4,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+212,Varicose veins,7,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+213,Hyperthyroidism,11,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+214,Hypothyroidism,13,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+215,Jaundice,8,6.0,3.0,1.0,Jaundice,True,6.0,3.0,1.0,Jaundice,True
+216,GERD,5,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+217,Hepatitis E,13,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+218,Heart attack,3,,,,,False,,,,,False
+219,Hypothyroidism,13,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+220,Paralysis (brain hemorrhage),3,1.0,4.0,1.0,Paralysis (brain hemorrhage),True,1.0,4.0,1.0,Paralysis (brain hemorrhage),True
+221,Tuberculosis,16,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+222,Malaria,8,7.0,3.0,1.0,Malaria,True,7.0,3.0,1.0,Malaria,True
+223,Dimorphic hemmorhoids(piles),4,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+224,Diabetes,9,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+225,Paralysis (brain hemorrhage),4,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+226,Hepatitis E,13,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+227,(vertigo) Paroymsal  Positional Vertigo,6,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+228,(vertigo) Paroymsal  Positional Vertigo,6,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+229,Hepatitis D,9,,,,,False,,,,,False
+230,Typhoid,11,4.0,5.0,1.0,Typhoid,True,4.0,5.0,1.0,Typhoid,True
+231,Chicken pox,11,7.0,3.0,1.0,Chicken pox,True,7.0,3.0,1.0,Chicken pox,True
+232,Diabetes,9,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+233,Hypoglycemia,12,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+234,Impetigo,5,2.0,4.0,1.0,Impetigo,True,2.0,4.0,1.0,Impetigo,True
+235,hepatitis A,10,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+236,Hyperthyroidism,11,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+237,AIDS,4,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+238,Hypothyroidism,13,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+239,Tuberculosis,16,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+240,Bronchial Asthma,6,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+241,Urinary tract infection,3,1.0,6.0,1.0,Urinary tract infection,True,1.0,6.0,1.0,Urinary tract infection,True
+242,Drug Reaction,5,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+243,Hepatitis E,13,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+244,Urinary tract infection,3,2.0,4.0,1.0,Urinary tract infection,True,2.0,4.0,1.0,Urinary tract infection,True
+245,Acne,4,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+246,Common Cold,16,4.0,5.0,1.0,Common Cold,True,4.0,5.0,1.0,Common Cold,True
+247,Dengue,13,6.0,4.0,1.0,Dengue,True,6.0,4.0,1.0,Dengue,True
+248,Common Cold,16,4.0,5.0,1.0,Common Cold,True,4.0,5.0,1.0,Common Cold,True
+249,Common Cold,16,4.0,5.0,1.0,Common Cold,True,4.0,5.0,1.0,Common Cold,True
+250,Bronchial Asthma,5,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+251,Allergy,3,2.0,4.0,1.0,Allergy,True,2.0,4.0,1.0,Allergy,True
+252,Hypoglycemia,11,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+253,Osteoarthristis,6,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+254,Psoriasis,6,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+255,GERD,6,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+256,Acne,4,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+257,Psoriasis,6,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+258,Acne,4,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+259,Chicken pox,11,7.0,3.0,1.0,Chicken pox,True,7.0,3.0,1.0,Chicken pox,True
+260,Tuberculosis,15,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+261,Impetigo,5,2.0,4.0,1.0,Impetigo,True,2.0,4.0,1.0,Impetigo,True
+262,Allergy,4,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+263,Gastroenteritis,4,3.0,4.0,1.0,Gastroenteritis,True,3.0,4.0,1.0,Gastroenteritis,True
+264,Arthritis,5,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+265,Alcoholic hepatitis,7,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+266,Alcoholic hepatitis,6,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+267,Gastroenteritis,4,3.0,4.0,1.0,Gastroenteritis,True,3.0,4.0,1.0,Gastroenteritis,True
+268,Chicken pox,10,6.0,3.0,1.0,Chicken pox,True,6.0,3.0,1.0,Chicken pox,True
+269,AIDS,3,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+270,Chicken pox,11,7.0,3.0,1.0,Chicken pox,True,7.0,3.0,1.0,Chicken pox,True
+271,Drug Reaction,5,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+272,Osteoarthristis,6,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+273,Osteoarthristis,6,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+274,hepatitis A,10,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+275,Hepatitis B,12,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+276,Drug Reaction,4,2.0,5.0,1.0,Drug Reaction,True,2.0,5.0,1.0,Drug Reaction,True
+277,Bronchial Asthma,6,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+278,Hepatitis D,9,,,,,False,,,,,False
+279,Hypothyroidism,13,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+280,Jaundice,8,6.0,3.0,1.0,Jaundice,True,6.0,3.0,1.0,Jaundice,True
+281,Drug Reaction,4,1.0,6.0,1.0,Drug Reaction,True,1.0,6.0,1.0,Drug Reaction,True
+282,Hepatitis B,11,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+283,Chronic cholestasis,7,7.0,1.0,1.0,Chronic cholestasis,True,7.0,1.0,1.0,Chronic cholestasis,True
+284,Fungal infection,3,1.0,6.0,1.0,Fungal infection,True,1.0,6.0,1.0,Fungal infection,True
+285,AIDS,4,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+286,Paralysis (brain hemorrhage),4,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+287,Hepatitis E,13,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+288,Jaundice,8,6.0,3.0,1.0,Jaundice,True,6.0,3.0,1.0,Jaundice,True
+289,Psoriasis,5,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+290,Alcoholic hepatitis,6,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+291,Hepatitis C,5,3.0,4.0,1.0,Hepatitis C,True,3.0,4.0,1.0,Hepatitis C,True
+292,Chicken pox,11,7.0,3.0,1.0,Chicken pox,True,7.0,3.0,1.0,Chicken pox,True
+293,Migraine,8,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+294,Hyperthyroidism,11,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+295,Pneumonia,10,3.0,5.0,1.0,Pneumonia,True,3.0,5.0,1.0,Pneumonia,True
+296,Malaria,7,6.0,3.0,1.0,Malaria,True,6.0,3.0,1.0,Malaria,True
+297,Urinary tract infection,4,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+298,Impetigo,4,1.0,4.0,1.0,Impetigo,True,1.0,4.0,1.0,Impetigo,True
+299,Dengue,13,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+300,Hepatitis E,12,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+301,Acne,3,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+302,Arthritis,4,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+303,Arthritis,5,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+304,Jaundice,8,6.0,3.0,1.0,Jaundice,True,6.0,3.0,1.0,Jaundice,True
+305,Peptic ulcer diseae,5,1.0,5.0,1.0,Peptic ulcer diseae,True,1.0,5.0,1.0,Peptic ulcer diseae,True
+306,hepatitis A,11,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+307,Osteoarthristis,5,2.0,3.0,1.0,Osteoarthristis,True,2.0,3.0,1.0,Osteoarthristis,True
+308,Urinary tract infection,3,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+309,Hyperthyroidism,10,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+310,hepatitis A,10,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+311,Tuberculosis,16,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+312,Malaria,8,7.0,3.0,1.0,Malaria,True,7.0,3.0,1.0,Malaria,True
+313,Diabetes,9,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+314,Alcoholic hepatitis,7,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+315,Gastroenteritis,3,3.0,3.0,1.0,Gastroenteritis,True,3.0,3.0,1.0,Gastroenteritis,True
+316,Alcoholic hepatitis,6,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+317,Dengue,14,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+318,AIDS,3,2.0,5.0,1.0,AIDS,True,2.0,5.0,1.0,AIDS,True
+319,Jaundice,8,6.0,3.0,1.0,Jaundice,True,6.0,3.0,1.0,Jaundice,True
+320,Pneumonia,11,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+321,Impetigo,4,2.0,4.0,1.0,Impetigo,True,2.0,4.0,1.0,Impetigo,True
+322,Gastroenteritis,4,3.0,4.0,1.0,Gastroenteritis,True,3.0,4.0,1.0,Gastroenteritis,True
+323,Hypothyroidism,13,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+324,Cervical spondylosis,5,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+325,Typhoid,10,4.0,5.0,1.0,Typhoid,True,4.0,5.0,1.0,Typhoid,True
+326,Malaria,8,7.0,3.0,1.0,Malaria,True,7.0,3.0,1.0,Malaria,True
+327,Dengue,14,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+328,Bronchial Asthma,6,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+329,Hypoglycemia,12,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+330,Tuberculosis,15,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+331,Hepatitis E,12,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+332,Peptic ulcer diseae,5,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+333,Drug Reaction,5,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+334,Hypertension,4,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+335,Allergy,4,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+336,AIDS,4,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+337,Pneumonia,10,3.0,5.0,1.0,Pneumonia,True,3.0,5.0,1.0,Pneumonia,True
+338,Psoriasis,6,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+339,Malaria,8,7.0,3.0,1.0,Malaria,True,7.0,3.0,1.0,Malaria,True
+340,Arthritis,5,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+341,AIDS,4,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+342,Drug Reaction,4,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+343,hepatitis A,10,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+344,Arthritis,5,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+345,Cervical spondylosis,5,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+346,Typhoid,10,4.0,5.0,1.0,Typhoid,True,4.0,5.0,1.0,Typhoid,True
+347,Arthritis,5,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+348,Diabetes,9,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+349,Osteoarthristis,6,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+350,Hepatitis C,6,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+351,Psoriasis,6,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+352,Malaria,8,7.0,3.0,1.0,Malaria,True,7.0,3.0,1.0,Malaria,True
+353,Common Cold,17,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+354,AIDS,4,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+355,Acne,4,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+356,Gastroenteritis,4,3.0,4.0,1.0,Gastroenteritis,True,3.0,4.0,1.0,Gastroenteritis,True
+357,Dengue,14,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+358,Hypertension,4,3.0,3.0,1.0,Hypertension,True,3.0,3.0,1.0,Hypertension,True
+359,Hyperthyroidism,10,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+360,Dimorphic hemmorhoids(piles),5,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+361,Bronchial Asthma,5,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+362,Cervical spondylosis,5,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+363,Impetigo,5,2.0,4.0,1.0,Impetigo,True,2.0,4.0,1.0,Impetigo,True
+364,Hypothyroidism,12,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+365,Dimorphic hemmorhoids(piles),4,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+366,Cervical spondylosis,5,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+367,Hepatitis C,6,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+368,Hypertension,5,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+369,Hepatitis D,9,,,,,False,,,,,False
+370,Hypertension,5,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+371,AIDS,3,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+372,Hypoglycemia,11,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+373,Pneumonia,11,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+374,Dimorphic hemmorhoids(piles),5,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+375,Hyperthyroidism,11,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+376,Urinary tract infection,3,1.0,6.0,1.0,Urinary tract infection,True,1.0,6.0,1.0,Urinary tract infection,True
+377,Arthritis,5,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+378,Acne,3,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+379,Impetigo,5,2.0,4.0,1.0,Impetigo,True,2.0,4.0,1.0,Impetigo,True
+380,Osteoarthristis,6,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+381,hepatitis A,11,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+382,Cervical spondylosis,5,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+383,Heart attack,4,,,,,False,,,,,False
+384,Paralysis (brain hemorrhage),4,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+385,Drug Reaction,4,1.0,6.0,1.0,Drug Reaction,True,1.0,6.0,1.0,Drug Reaction,True
+386,Varicose veins,6,1.0,5.0,1.0,Varicose veins,True,1.0,5.0,1.0,Varicose veins,True
+387,GERD,5,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+388,Hypertension,4,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+389,Arthritis,5,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+390,Hypothyroidism,13,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+391,Dimorphic hemmorhoids(piles),5,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+392,Common Cold,17,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+393,Psoriasis,6,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+394,Chronic cholestasis,6,6.0,1.0,1.0,Chronic cholestasis,True,6.0,1.0,1.0,Chronic cholestasis,True
+395,Migraine,9,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+396,Bronchial Asthma,6,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+397,Jaundice,8,6.0,3.0,1.0,Jaundice,True,6.0,3.0,1.0,Jaundice,True
+398,Tuberculosis,15,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+399,Arthritis,5,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+400,Hyperthyroidism,11,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+401,Typhoid,11,4.0,5.0,1.0,Typhoid,True,4.0,5.0,1.0,Typhoid,True
+402,GERD,6,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+403,Hepatitis D,9,,,,,False,,,,,False
+404,Impetigo,5,2.0,4.0,1.0,Impetigo,True,2.0,4.0,1.0,Impetigo,True
+405,Alcoholic hepatitis,7,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+406,Typhoid,10,3.0,5.0,1.0,Typhoid,True,3.0,5.0,1.0,Typhoid,True
+407,Cervical spondylosis,4,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+408,Typhoid,11,4.0,5.0,1.0,Typhoid,True,4.0,5.0,1.0,Typhoid,True
+409,Hypertension,5,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+410,Urinary tract infection,4,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+411,hepatitis A,11,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+412,Diabetes,10,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+413,Hepatitis D,8,,,,,False,,,,,False
+414,Peptic ulcer diseae,5,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+415,Hypoglycemia,12,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+416,Tuberculosis,16,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+417,Cervical spondylosis,5,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+418,Hyperthyroidism,10,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+419,Paralysis (brain hemorrhage),3,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+420,Heart attack,4,,,,,False,,,,,False
+421,Hyperthyroidism,11,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+422,(vertigo) Paroymsal  Positional Vertigo,6,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+423,Varicose veins,7,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+424,Hepatitis C,6,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+425,Tuberculosis,15,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+426,(vertigo) Paroymsal  Positional Vertigo,6,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+427,Typhoid,11,4.0,5.0,1.0,Typhoid,True,4.0,5.0,1.0,Typhoid,True
+428,Common Cold,17,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+429,Paralysis (brain hemorrhage),4,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+430,Acne,4,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+431,Hepatitis E,12,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+432,Fungal infection,4,1.0,6.0,1.0,Fungal infection,True,1.0,6.0,1.0,Fungal infection,True
+433,Fungal infection,3,1.0,4.0,1.0,Fungal infection,True,1.0,4.0,1.0,Fungal infection,True
+434,Migraine,8,3.0,4.0,1.0,Migraine,True,3.0,4.0,1.0,Migraine,True
+435,Hypertension,5,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+436,Osteoarthristis,6,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+437,Jaundice,8,6.0,3.0,1.0,Jaundice,True,6.0,3.0,1.0,Jaundice,True
+438,Heart attack,4,,,,,False,,,,,False
+439,Chronic cholestasis,6,6.0,1.0,1.0,Chronic cholestasis,True,6.0,1.0,1.0,Chronic cholestasis,True
+440,Hepatitis B,12,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+441,Chicken pox,11,7.0,3.0,1.0,Chicken pox,True,7.0,3.0,1.0,Chicken pox,True
+442,Hyperthyroidism,10,2.0,5.0,1.0,Hyperthyroidism,True,2.0,5.0,1.0,Hyperthyroidism,True
+443,Drug Reaction,5,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+444,Hyperthyroidism,10,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+445,Alcoholic hepatitis,6,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+446,Acne,4,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+447,Hypertension,5,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+448,Fungal infection,4,1.0,6.0,1.0,Fungal infection,True,1.0,6.0,1.0,Fungal infection,True
+449,Osteoarthristis,6,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+450,Pneumonia,10,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+451,Varicose veins,6,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+452,Bronchial Asthma,6,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+453,Hepatitis B,11,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+454,Acne,3,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+455,hepatitis A,11,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+456,Gastroenteritis,3,2.0,4.0,1.0,Gastroenteritis,True,2.0,4.0,1.0,Gastroenteritis,True
+457,Dimorphic hemmorhoids(piles),5,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+458,Malaria,7,6.0,3.0,1.0,Malaria,True,6.0,3.0,1.0,Malaria,True
+459,Allergy,3,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+460,Malaria,7,6.0,3.0,1.0,Malaria,True,6.0,3.0,1.0,Malaria,True
+461,Paralysis (brain hemorrhage),4,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+462,Diabetes,10,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+463,Migraine,8,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+464,Hepatitis C,5,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+465,GERD,5,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+466,Hyperthyroidism,11,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+467,Malaria,7,6.0,3.0,1.0,Malaria,True,6.0,3.0,1.0,Malaria,True
+468,Fungal infection,4,1.0,6.0,1.0,Fungal infection,True,1.0,6.0,1.0,Fungal infection,True
+469,Hepatitis D,8,,,,,False,,,,,False
+470,Typhoid,10,4.0,5.0,1.0,Typhoid,True,4.0,5.0,1.0,Typhoid,True
+471,AIDS,4,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+472,Pneumonia,11,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+473,Alcoholic hepatitis,7,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+474,Peptic ulcer diseae,6,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+475,Urinary tract infection,3,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+476,Drug Reaction,5,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+477,Dengue,13,2.0,5.0,1.0,Dengue,True,2.0,5.0,1.0,Dengue,True
+478,Fungal infection,3,1.0,6.0,1.0,Fungal infection,True,1.0,6.0,1.0,Fungal infection,True
+479,Chronic cholestasis,6,6.0,1.0,1.0,Chronic cholestasis,True,6.0,1.0,1.0,Chronic cholestasis,True
+480,Jaundice,8,6.0,3.0,1.0,Jaundice,True,6.0,3.0,1.0,Jaundice,True
+481,(vertigo) Paroymsal  Positional Vertigo,6,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+482,Chicken pox,11,7.0,3.0,1.0,Chicken pox,True,7.0,3.0,1.0,Chicken pox,True
+483,Drug Reaction,5,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+484,Arthritis,4,2.0,4.0,1.0,Arthritis,True,2.0,4.0,1.0,Arthritis,True
+485,Cervical spondylosis,5,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+486,Hepatitis E,12,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+487,AIDS,3,1.0,6.0,1.0,AIDS,True,1.0,6.0,1.0,AIDS,True
+488,Hyperthyroidism,10,2.0,5.0,1.0,Hyperthyroidism,True,2.0,5.0,1.0,Hyperthyroidism,True
+489,Hepatitis D,9,,,,,False,,,,,False
+490,Chronic cholestasis,6,6.0,1.0,1.0,Chronic cholestasis,True,6.0,1.0,1.0,Chronic cholestasis,True
+491,Arthritis,5,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+492,Gastroenteritis,3,2.0,4.0,1.0,Gastroenteritis,True,2.0,4.0,1.0,Gastroenteritis,True
+493,Hypertension,5,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+494,Urinary tract infection,4,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+495,Allergy,3,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+496,hepatitis A,10,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+497,Peptic ulcer diseae,6,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+498,Osteoarthristis,5,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+499,Urinary tract infection,4,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+500,Bronchial Asthma,5,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+501,Malaria,7,6.0,3.0,1.0,Malaria,True,6.0,3.0,1.0,Malaria,True
+502,Hypertension,4,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+503,Drug Reaction,5,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+504,Diabetes,10,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+505,Fungal infection,3,1.0,6.0,1.0,Fungal infection,True,1.0,6.0,1.0,Fungal infection,True
+506,Paralysis (brain hemorrhage),3,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+507,Dimorphic hemmorhoids(piles),5,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+508,Hepatitis C,6,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+509,Jaundice,8,6.0,3.0,1.0,Jaundice,True,6.0,3.0,1.0,Jaundice,True
+510,Pneumonia,10,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+511,Hepatitis B,11,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+512,Psoriasis,6,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+513,Varicose veins,7,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+514,Malaria,7,6.0,3.0,1.0,Malaria,True,6.0,3.0,1.0,Malaria,True
+515,Chronic cholestasis,7,7.0,1.0,1.0,Chronic cholestasis,True,7.0,1.0,1.0,Chronic cholestasis,True
+516,Impetigo,5,2.0,4.0,1.0,Impetigo,True,2.0,4.0,1.0,Impetigo,True
+517,Migraine,8,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+518,Impetigo,4,2.0,4.0,1.0,Impetigo,True,2.0,4.0,1.0,Impetigo,True
+519,Cervical spondylosis,4,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+520,Alcoholic hepatitis,7,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+521,Typhoid,10,4.0,5.0,1.0,Typhoid,True,4.0,5.0,1.0,Typhoid,True
+522,Hepatitis B,11,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+523,Hypoglycemia,11,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+524,Alcoholic hepatitis,6,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+525,Hypertension,5,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+526,Peptic ulcer diseae,6,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+527,Cervical spondylosis,4,2.0,4.0,1.0,Cervical spondylosis,True,2.0,4.0,1.0,Cervical spondylosis,True
+528,Common Cold,16,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+529,Jaundice,7,5.0,3.0,1.0,Jaundice,True,5.0,3.0,1.0,Jaundice,True
+530,Acne,4,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+531,GERD,6,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+532,Drug Reaction,4,2.0,5.0,1.0,Drug Reaction,True,2.0,5.0,1.0,Drug Reaction,True
+533,Tuberculosis,15,4.0,5.0,1.0,Tuberculosis,True,4.0,5.0,1.0,Tuberculosis,True
+534,Impetigo,5,2.0,4.0,1.0,Impetigo,True,2.0,4.0,1.0,Impetigo,True
+535,Bronchial Asthma,5,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+536,Typhoid,11,4.0,5.0,1.0,Typhoid,True,4.0,5.0,1.0,Typhoid,True
+537,(vertigo) Paroymsal  Positional Vertigo,6,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+538,Chronic cholestasis,7,7.0,1.0,1.0,Chronic cholestasis,True,7.0,1.0,1.0,Chronic cholestasis,True
+539,Cervical spondylosis,4,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+540,Migraine,9,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+541,Chicken pox,10,6.0,3.0,1.0,Chicken pox,True,6.0,3.0,1.0,Chicken pox,True
+542,Chronic cholestasis,6,6.0,1.0,1.0,Chronic cholestasis,True,6.0,1.0,1.0,Chronic cholestasis,True
+543,Fungal infection,3,1.0,6.0,1.0,Fungal infection,True,1.0,6.0,1.0,Fungal infection,True
+544,Hepatitis D,8,,,,,False,,,,,False
+545,GERD,6,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+546,Hypertension,5,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+547,Chronic cholestasis,7,7.0,1.0,1.0,Chronic cholestasis,True,7.0,1.0,1.0,Chronic cholestasis,True
+548,Dengue,13,2.0,5.0,1.0,Dengue,True,2.0,5.0,1.0,Dengue,True
+549,Acne,4,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+550,Typhoid,10,5.0,4.0,1.0,Typhoid,True,5.0,4.0,1.0,Typhoid,True
+551,Hypothyroidism,12,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+552,Impetigo,4,1.0,4.0,1.0,Impetigo,True,1.0,4.0,1.0,Impetigo,True
+553,GERD,5,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+554,Chicken pox,11,7.0,3.0,1.0,Chicken pox,True,7.0,3.0,1.0,Chicken pox,True
+555,Allergy,4,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+556,hepatitis A,11,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+557,(vertigo) Paroymsal  Positional Vertigo,6,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+558,Fungal infection,3,1.0,4.0,1.0,Fungal infection,True,1.0,4.0,1.0,Fungal infection,True
+559,Diabetes,9,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+560,hepatitis A,11,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+561,Pneumonia,11,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+562,Urinary tract infection,4,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+563,Typhoid,10,4.0,5.0,1.0,Typhoid,True,4.0,5.0,1.0,Typhoid,True
+564,Drug Reaction,5,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+565,Chronic cholestasis,6,6.0,1.0,1.0,Chronic cholestasis,True,6.0,1.0,1.0,Chronic cholestasis,True
+566,Gastroenteritis,4,3.0,4.0,1.0,Gastroenteritis,True,3.0,4.0,1.0,Gastroenteritis,True
+567,Arthritis,5,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+568,AIDS,3,2.0,5.0,1.0,AIDS,True,2.0,5.0,1.0,AIDS,True
+569,Hypertension,4,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+570,Hypertension,4,3.0,3.0,1.0,Hypertension,True,3.0,3.0,1.0,Hypertension,True
+571,Hyperthyroidism,11,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+572,(vertigo) Paroymsal  Positional Vertigo,5,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+573,Dengue,13,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+574,Diabetes,10,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+575,Bronchial Asthma,6,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+576,Dimorphic hemmorhoids(piles),4,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+577,Dengue,14,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+578,Diabetes,10,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+579,Psoriasis,5,1.0,3.0,1.0,Psoriasis,True,1.0,3.0,1.0,Psoriasis,True
+580,Paralysis (brain hemorrhage),3,3.0,2.0,1.0,Paralysis (brain hemorrhage),True,3.0,2.0,1.0,Paralysis (brain hemorrhage),True
+581,Chicken pox,10,7.0,3.0,1.0,Chicken pox,True,7.0,3.0,1.0,Chicken pox,True
+582,Migraine,9,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+583,Alcoholic hepatitis,6,1.0,6.0,1.0,Alcoholic hepatitis,True,1.0,6.0,1.0,Alcoholic hepatitis,True
+584,Fungal infection,4,1.0,6.0,1.0,Fungal infection,True,1.0,6.0,1.0,Fungal infection,True
+585,Psoriasis,6,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+586,Diabetes,10,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+587,Hypertension,5,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+588,Hepatitis E,12,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+589,Hepatitis D,8,,,,,False,,,,,False
+590,Diabetes,9,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+591,Hepatitis C,6,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+592,Peptic ulcer diseae,6,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+593,Common Cold,16,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+594,Bronchial Asthma,5,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+595,Migraine,8,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+596,hepatitis A,11,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+597,Arthritis,5,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+598,Hypoglycemia,12,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+599,(vertigo) Paroymsal  Positional Vertigo,6,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+600,Heart attack,3,,,,,False,,,,,False
+601,Cervical spondylosis,5,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+602,Chronic cholestasis,7,7.0,1.0,1.0,Chronic cholestasis,True,7.0,1.0,1.0,Chronic cholestasis,True
+603,Chronic cholestasis,7,7.0,1.0,1.0,Chronic cholestasis,True,7.0,1.0,1.0,Chronic cholestasis,True
+604,Drug Reaction,5,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+605,Impetigo,5,2.0,4.0,1.0,Impetigo,True,2.0,4.0,1.0,Impetigo,True
+606,Common Cold,16,4.0,5.0,1.0,Common Cold,True,4.0,5.0,1.0,Common Cold,True
+607,Malaria,8,7.0,3.0,1.0,Malaria,True,7.0,3.0,1.0,Malaria,True
+608,Jaundice,7,5.0,3.0,1.0,Jaundice,True,5.0,3.0,1.0,Jaundice,True
+609,Chronic cholestasis,7,7.0,1.0,1.0,Chronic cholestasis,True,7.0,1.0,1.0,Chronic cholestasis,True
+610,Gastroenteritis,4,3.0,4.0,1.0,Gastroenteritis,True,3.0,4.0,1.0,Gastroenteritis,True
+611,Hepatitis B,12,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+612,Jaundice,8,6.0,3.0,1.0,Jaundice,True,6.0,3.0,1.0,Jaundice,True
+613,Allergy,4,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+614,(vertigo) Paroymsal  Positional Vertigo,6,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+615,Drug Reaction,4,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+616,GERD,5,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+617,Chicken pox,10,7.0,3.0,1.0,Chicken pox,True,7.0,3.0,1.0,Chicken pox,True
+618,Dengue,14,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+619,Bronchial Asthma,5,5.0,4.0,1.0,Bronchial Asthma,True,5.0,4.0,1.0,Bronchial Asthma,True
+620,Dimorphic hemmorhoids(piles),5,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+621,Cervical spondylosis,5,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+622,Alcoholic hepatitis,6,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+623,Hypoglycemia,12,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+624,Hepatitis E,12,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+625,Dimorphic hemmorhoids(piles),5,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+626,Dimorphic hemmorhoids(piles),5,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+627,Allergy,4,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+628,AIDS,3,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+629,Hypothyroidism,13,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+630,Hypoglycemia,11,3.0,4.0,1.0,Hypoglycemia,True,3.0,4.0,1.0,Hypoglycemia,True
+631,Hyperthyroidism,11,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+632,Chronic cholestasis,7,7.0,1.0,1.0,Chronic cholestasis,True,7.0,1.0,1.0,Chronic cholestasis,True
+633,Cervical spondylosis,5,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+634,AIDS,3,1.0,6.0,1.0,AIDS,True,1.0,6.0,1.0,AIDS,True
+635,Chicken pox,11,7.0,3.0,1.0,Chicken pox,True,7.0,3.0,1.0,Chicken pox,True
+636,Allergy,4,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+637,Diabetes,10,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+638,Typhoid,10,5.0,4.0,1.0,Typhoid,True,5.0,4.0,1.0,Typhoid,True
+639,Acne,4,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+640,Peptic ulcer diseae,6,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+641,Paralysis (brain hemorrhage),4,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+642,Fungal infection,3,1.0,6.0,1.0,Fungal infection,True,1.0,6.0,1.0,Fungal infection,True
+643,Heart attack,4,,,,,False,,,,,False
+644,Varicose veins,7,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+645,Jaundice,7,5.0,3.0,1.0,Jaundice,True,5.0,3.0,1.0,Jaundice,True
+646,Chronic cholestasis,6,,,,,False,,,,,False
+647,Hyperthyroidism,11,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+648,Common Cold,17,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+649,Fungal infection,3,1.0,4.0,1.0,Fungal infection,True,1.0,4.0,1.0,Fungal infection,True
+650,Chicken pox,10,7.0,3.0,1.0,Chicken pox,True,7.0,3.0,1.0,Chicken pox,True
+651,Impetigo,5,2.0,4.0,1.0,Impetigo,True,2.0,4.0,1.0,Impetigo,True
+652,Gastroenteritis,4,3.0,4.0,1.0,Gastroenteritis,True,3.0,4.0,1.0,Gastroenteritis,True
+653,Allergy,4,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+654,Urinary tract infection,3,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+655,Hepatitis C,6,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+656,Hypothyroidism,12,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+657,Hepatitis C,5,,,,,False,,,,,False
+658,Peptic ulcer diseae,5,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+659,Hepatitis B,11,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+660,Hepatitis D,9,,,,,False,,,,,False
+661,Hepatitis B,11,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+662,Cervical spondylosis,5,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+663,Alcoholic hepatitis,7,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+664,Hypothyroidism,12,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+665,Tuberculosis,15,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+666,Diabetes,9,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+667,Heart attack,4,,,,,False,,,,,False
+668,Dengue,13,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+669,Acne,3,1.0,2.0,1.0,Acne,True,1.0,2.0,1.0,Acne,True
+670,Psoriasis,6,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+671,Dimorphic hemmorhoids(piles),4,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+672,Dengue,13,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+673,Drug Reaction,4,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+674,Varicose veins,6,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+675,Common Cold,16,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+676,Peptic ulcer diseae,6,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+677,Hepatitis B,12,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+678,Heart attack,4,,,,,False,,,,,False
+679,Diabetes,9,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+680,Migraine,9,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+681,Pneumonia,11,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+682,Pneumonia,11,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+683,Varicose veins,7,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+684,Malaria,7,7.0,2.0,1.0,Malaria,True,7.0,2.0,1.0,Malaria,True
+685,Typhoid,11,4.0,5.0,1.0,Typhoid,True,4.0,5.0,1.0,Typhoid,True
+686,Chicken pox,11,7.0,3.0,1.0,Chicken pox,True,7.0,3.0,1.0,Chicken pox,True
+687,Fungal infection,4,1.0,6.0,1.0,Fungal infection,True,1.0,6.0,1.0,Fungal infection,True
+688,AIDS,3,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+689,Urinary tract infection,4,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+690,Allergy,4,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+691,Jaundice,7,7.0,1.0,1.0,Jaundice,True,7.0,1.0,1.0,Jaundice,True
+692,Hepatitis B,11,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+693,Jaundice,8,6.0,3.0,1.0,Jaundice,True,6.0,3.0,1.0,Jaundice,True
+694,Fungal infection,3,1.0,6.0,1.0,Fungal infection,True,1.0,6.0,1.0,Fungal infection,True
+695,Impetigo,5,2.0,4.0,1.0,Impetigo,True,2.0,4.0,1.0,Impetigo,True
+696,Fungal infection,4,1.0,6.0,1.0,Fungal infection,True,1.0,6.0,1.0,Fungal infection,True
+697,Dimorphic hemmorhoids(piles),5,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+698,Hypertension,5,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+699,Paralysis (brain hemorrhage),4,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+700,Dimorphic hemmorhoids(piles),4,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+701,Pneumonia,10,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+702,Migraine,8,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+703,AIDS,4,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+704,Jaundice,8,6.0,3.0,1.0,Jaundice,True,6.0,3.0,1.0,Jaundice,True
+705,Diabetes,10,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+706,hepatitis A,11,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+707,Paralysis (brain hemorrhage),4,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+708,Psoriasis,5,3.0,2.0,1.0,Psoriasis,True,3.0,2.0,1.0,Psoriasis,True
+709,Common Cold,17,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+710,Tuberculosis,16,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+711,Migraine,9,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+712,Typhoid,10,4.0,5.0,1.0,Typhoid,True,4.0,5.0,1.0,Typhoid,True
+713,Gastroenteritis,3,3.0,3.0,1.0,Gastroenteritis,True,3.0,3.0,1.0,Gastroenteritis,True
+714,Urinary tract infection,4,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+715,Gastroenteritis,4,3.0,4.0,1.0,Gastroenteritis,True,3.0,4.0,1.0,Gastroenteritis,True
+716,Impetigo,5,2.0,4.0,1.0,Impetigo,True,2.0,4.0,1.0,Impetigo,True
+717,Bronchial Asthma,5,5.0,4.0,1.0,Bronchial Asthma,True,5.0,4.0,1.0,Bronchial Asthma,True
+718,Tuberculosis,16,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+719,Hypothyroidism,13,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+720,Osteoarthristis,6,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+721,GERD,6,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+722,GERD,5,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+723,Psoriasis,6,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+724,(vertigo) Paroymsal  Positional Vertigo,6,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+725,Hypoglycemia,12,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+726,Pneumonia,10,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+727,Acne,3,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+728,Malaria,8,7.0,3.0,1.0,Malaria,True,7.0,3.0,1.0,Malaria,True
+729,Urinary tract infection,3,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+730,Hepatitis D,8,,,,,False,,,,,False
+731,Psoriasis,6,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+732,Alcoholic hepatitis,6,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+733,Hypertension,5,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+734,Hepatitis D,9,,,,,False,,,,,False
+735,Common Cold,17,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+736,Impetigo,5,2.0,4.0,1.0,Impetigo,True,2.0,4.0,1.0,Impetigo,True
+737,Impetigo,4,2.0,4.0,1.0,Impetigo,True,2.0,4.0,1.0,Impetigo,True
+738,Psoriasis,6,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+739,Gastroenteritis,4,3.0,4.0,1.0,Gastroenteritis,True,3.0,4.0,1.0,Gastroenteritis,True
+740,Fungal infection,3,1.0,6.0,1.0,Fungal infection,True,1.0,6.0,1.0,Fungal infection,True
+741,Hypothyroidism,13,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+742,Hepatitis D,8,,,,,False,,,,,False
+743,Common Cold,16,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+744,hepatitis A,11,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+745,Arthritis,4,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+746,Bronchial Asthma,5,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+747,Hepatitis B,11,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+748,Fungal infection,4,1.0,6.0,1.0,Fungal infection,True,1.0,6.0,1.0,Fungal infection,True
+749,Varicose veins,7,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+750,Bronchial Asthma,6,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+751,Peptic ulcer diseae,5,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+752,Hypertension,4,3.0,3.0,1.0,Hypertension,True,3.0,3.0,1.0,Hypertension,True
+753,Chicken pox,11,7.0,3.0,1.0,Chicken pox,True,7.0,3.0,1.0,Chicken pox,True
+754,(vertigo) Paroymsal  Positional Vertigo,6,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+755,Cervical spondylosis,5,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+756,Tuberculosis,16,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+757,Diabetes,10,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+758,Alcoholic hepatitis,6,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+759,Gastroenteritis,3,3.0,3.0,1.0,Gastroenteritis,True,3.0,3.0,1.0,Gastroenteritis,True
+760,Alcoholic hepatitis,7,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+761,Typhoid,10,3.0,5.0,1.0,Typhoid,True,3.0,5.0,1.0,Typhoid,True
+762,Hepatitis B,12,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+763,Pneumonia,11,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+764,GERD,6,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+765,Hepatitis C,6,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+766,Malaria,8,7.0,3.0,1.0,Malaria,True,7.0,3.0,1.0,Malaria,True
+767,Allergy,4,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+768,Hypertension,5,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+769,Heart attack,4,,,,,False,,,,,False
+770,Dengue,13,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+771,Chronic cholestasis,7,7.0,1.0,1.0,Chronic cholestasis,True,7.0,1.0,1.0,Chronic cholestasis,True
+772,Arthritis,5,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+773,Gastroenteritis,3,2.0,4.0,1.0,Gastroenteritis,True,2.0,4.0,1.0,Gastroenteritis,True
+774,Hypothyroidism,13,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+775,Arthritis,5,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+776,Malaria,8,7.0,3.0,1.0,Malaria,True,7.0,3.0,1.0,Malaria,True
+777,Hepatitis C,5,,,,,False,,,,,False
+778,Hypoglycemia,12,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+779,Acne,3,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+780,Bronchial Asthma,5,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+781,hepatitis A,11,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+782,GERD,6,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+783,Common Cold,16,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+784,Dengue,14,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+785,Alcoholic hepatitis,6,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+786,Arthritis,4,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+787,Fungal infection,3,1.0,4.0,1.0,Fungal infection,True,1.0,4.0,1.0,Fungal infection,True
+788,Hypoglycemia,12,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+789,Hypothyroidism,12,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+790,Urinary tract infection,4,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+791,Psoriasis,5,3.0,2.0,1.0,Psoriasis,True,3.0,2.0,1.0,Psoriasis,True
+792,Jaundice,8,6.0,3.0,1.0,Jaundice,True,6.0,3.0,1.0,Jaundice,True
+793,Typhoid,10,3.0,5.0,1.0,Typhoid,True,3.0,5.0,1.0,Typhoid,True
+794,hepatitis A,10,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+795,Varicose veins,6,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+796,GERD,6,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+797,GERD,6,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+798,Hyperthyroidism,10,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+799,Allergy,3,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+800,Pneumonia,11,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+801,Urinary tract infection,3,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+802,Peptic ulcer diseae,5,1.0,5.0,1.0,Peptic ulcer diseae,True,1.0,5.0,1.0,Peptic ulcer diseae,True
+803,Paralysis (brain hemorrhage),4,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+804,Chronic cholestasis,7,7.0,1.0,1.0,Chronic cholestasis,True,7.0,1.0,1.0,Chronic cholestasis,True
+805,Acne,4,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+806,Hepatitis B,12,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+807,Alcoholic hepatitis,6,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+808,Pneumonia,11,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+809,Dimorphic hemmorhoids(piles),5,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+810,Urinary tract infection,4,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+811,hepatitis A,10,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+812,Arthritis,5,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+813,Peptic ulcer diseae,5,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+814,AIDS,4,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+815,Drug Reaction,4,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+816,Hypothyroidism,13,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+817,Psoriasis,6,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+818,Cervical spondylosis,4,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+819,AIDS,4,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+820,Hepatitis C,6,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+821,Malaria,8,7.0,3.0,1.0,Malaria,True,7.0,3.0,1.0,Malaria,True
+822,Allergy,3,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+823,(vertigo) Paroymsal  Positional Vertigo,6,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+824,Hepatitis C,6,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+825,Heart attack,4,,,,,False,,,,,False
+826,Osteoarthristis,5,2.0,3.0,1.0,Osteoarthristis,True,2.0,3.0,1.0,Osteoarthristis,True
+827,Gastroenteritis,3,3.0,3.0,1.0,Gastroenteritis,True,3.0,3.0,1.0,Gastroenteritis,True
+828,Chronic cholestasis,6,,,,,False,,,,,False
+829,Dengue,13,6.0,4.0,1.0,Dengue,True,6.0,4.0,1.0,Dengue,True
+830,Migraine,9,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+831,Hypoglycemia,12,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+832,Peptic ulcer diseae,6,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+833,Dimorphic hemmorhoids(piles),5,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+834,Hepatitis E,12,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+835,Hypothyroidism,12,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+836,Osteoarthristis,6,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+837,Peptic ulcer diseae,5,1.0,5.0,1.0,Peptic ulcer diseae,True,1.0,5.0,1.0,Peptic ulcer diseae,True
+838,Malaria,7,6.0,3.0,1.0,Malaria,True,6.0,3.0,1.0,Malaria,True
+839,Cervical spondylosis,4,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+840,Hepatitis D,8,,,,,False,,,,,False
+841,Arthritis,5,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+842,AIDS,4,2.0,6.0,1.0,AIDS,True,2.0,6.0,1.0,AIDS,True
+843,Chronic cholestasis,7,7.0,1.0,1.0,Chronic cholestasis,True,7.0,1.0,1.0,Chronic cholestasis,True
+844,Hepatitis B,12,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+845,Chronic cholestasis,6,6.0,1.0,1.0,Chronic cholestasis,True,6.0,1.0,1.0,Chronic cholestasis,True
+846,Peptic ulcer diseae,6,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+847,Chicken pox,10,6.0,3.0,1.0,Chicken pox,True,6.0,3.0,1.0,Chicken pox,True
+848,Allergy,4,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+849,Paralysis (brain hemorrhage),3,1.0,4.0,1.0,Paralysis (brain hemorrhage),True,1.0,4.0,1.0,Paralysis (brain hemorrhage),True
+850,Hypertension,5,2.0,4.0,1.0,Hypertension,True,2.0,4.0,1.0,Hypertension,True
+851,Allergy,4,1.0,5.0,1.0,Allergy,True,1.0,5.0,1.0,Allergy,True
+852,Common Cold,17,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+853,Pneumonia,11,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+854,Heart attack,4,,,,,False,,,,,False
+855,Hypoglycemia,12,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+856,Varicose veins,7,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+857,Acne,4,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+858,Impetigo,5,2.0,4.0,1.0,Impetigo,True,2.0,4.0,1.0,Impetigo,True
+859,GERD,6,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+860,Dengue,13,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+861,Arthritis,4,1.0,5.0,1.0,Arthritis,True,1.0,5.0,1.0,Arthritis,True
+862,Peptic ulcer diseae,5,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+863,Dengue,13,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+864,Paralysis (brain hemorrhage),4,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+865,Chronic cholestasis,6,6.0,1.0,1.0,Chronic cholestasis,True,6.0,1.0,1.0,Chronic cholestasis,True
+866,Varicose veins,7,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+867,(vertigo) Paroymsal  Positional Vertigo,5,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+868,Osteoarthristis,6,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+869,Peptic ulcer diseae,5,1.0,5.0,1.0,Peptic ulcer diseae,True,1.0,5.0,1.0,Peptic ulcer diseae,True
+870,Hepatitis D,8,,,,,False,,,,,False
+871,Gastroenteritis,4,3.0,4.0,1.0,Gastroenteritis,True,3.0,4.0,1.0,Gastroenteritis,True
+872,hepatitis A,11,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+873,Migraine,8,2.0,4.0,1.0,Migraine,True,2.0,4.0,1.0,Migraine,True
+874,Dengue,13,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+875,(vertigo) Paroymsal  Positional Vertigo,5,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+876,Hyperthyroidism,11,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+877,Fungal infection,4,1.0,6.0,1.0,Fungal infection,True,1.0,6.0,1.0,Fungal infection,True
+878,Chronic cholestasis,7,7.0,1.0,1.0,Chronic cholestasis,True,7.0,1.0,1.0,Chronic cholestasis,True
+879,Osteoarthristis,6,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+880,Heart attack,4,,,,,False,,,,,False
+881,Chronic cholestasis,7,7.0,1.0,1.0,Chronic cholestasis,True,7.0,1.0,1.0,Chronic cholestasis,True
+882,GERD,5,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+883,Psoriasis,6,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+884,Hepatitis D,8,,,,,False,,,,,False
+885,Psoriasis,6,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+886,Drug Reaction,4,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+887,Chicken pox,11,7.0,3.0,1.0,Chicken pox,True,7.0,3.0,1.0,Chicken pox,True
+888,Psoriasis,6,2.0,3.0,1.0,Psoriasis,True,2.0,3.0,1.0,Psoriasis,True
+889,Malaria,8,7.0,3.0,1.0,Malaria,True,7.0,3.0,1.0,Malaria,True
+890,Hyperthyroidism,10,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+891,Hepatitis E,12,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+892,Hypoglycemia,11,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+893,Hypothyroidism,12,2.0,6.0,1.0,Hypothyroidism,True,2.0,6.0,1.0,Hypothyroidism,True
+894,Dimorphic hemmorhoids(piles),5,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+895,Migraine,8,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+896,Hepatitis E,13,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+897,(vertigo) Paroymsal  Positional Vertigo,6,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+898,Malaria,8,7.0,3.0,1.0,Malaria,True,7.0,3.0,1.0,Malaria,True
+899,Alcoholic hepatitis,6,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+900,Hepatitis E,12,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+901,Hepatitis C,6,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+902,Migraine,9,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+903,Urinary tract infection,4,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+904,Osteoarthristis,6,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+905,Heart attack,4,,,,,False,,,,,False
+906,Urinary tract infection,4,2.0,6.0,1.0,Urinary tract infection,True,2.0,6.0,1.0,Urinary tract infection,True
+907,Hepatitis B,12,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+908,Varicose veins,7,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+909,Heart attack,4,,,,,False,,,,,False
+910,Drug Reaction,5,2.0,6.0,1.0,Drug Reaction,True,2.0,6.0,1.0,Drug Reaction,True
+911,Jaundice,8,6.0,3.0,1.0,Jaundice,True,6.0,3.0,1.0,Jaundice,True
+912,Paralysis (brain hemorrhage),4,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+913,Bronchial Asthma,5,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+914,Paralysis (brain hemorrhage),3,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+915,Hypoglycemia,12,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+916,GERD,6,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+917,Cervical spondylosis,4,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+918,Acne,4,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+919,Dengue,14,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+920,GERD,6,2.0,5.0,1.0,GERD,True,2.0,5.0,1.0,GERD,True
+921,Paralysis (brain hemorrhage),4,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+922,Bronchial Asthma,6,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+923,Peptic ulcer diseae,6,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+924,Heart attack,4,,,,,False,,,,,False
+925,Alcoholic hepatitis,7,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+926,Paralysis (brain hemorrhage),4,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+927,Osteoarthristis,6,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+928,Impetigo,4,3.0,3.0,1.0,Impetigo,True,3.0,3.0,1.0,Impetigo,True
+929,Hepatitis E,12,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+930,Hepatitis B,11,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+931,Chronic cholestasis,7,7.0,1.0,1.0,Chronic cholestasis,True,7.0,1.0,1.0,Chronic cholestasis,True
+932,Hepatitis D,9,,,,,False,,,,,False
+933,Diabetes,10,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+934,Acne,3,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+935,Heart attack,4,,,,,False,,,,,False
+936,Alcoholic hepatitis,6,1.0,7.0,1.0,Alcoholic hepatitis,True,1.0,7.0,1.0,Alcoholic hepatitis,True
+937,Hepatitis D,9,,,,,False,,,,,False
+938,Paralysis (brain hemorrhage),3,2.0,4.0,1.0,Paralysis (brain hemorrhage),True,2.0,4.0,1.0,Paralysis (brain hemorrhage),True
+939,Bronchial Asthma,5,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+940,Diabetes,10,2.0,5.0,1.0,Diabetes,True,2.0,5.0,1.0,Diabetes,True
+941,Dengue,13,3.0,5.0,1.0,Dengue,True,3.0,5.0,1.0,Dengue,True
+942,Dimorphic hemmorhoids(piles),5,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+943,Cervical spondylosis,4,2.0,4.0,1.0,Cervical spondylosis,True,2.0,4.0,1.0,Cervical spondylosis,True
+944,Chicken pox,11,7.0,3.0,1.0,Chicken pox,True,7.0,3.0,1.0,Chicken pox,True
+945,Chicken pox,10,7.0,3.0,1.0,Chicken pox,True,7.0,3.0,1.0,Chicken pox,True
+946,Dimorphic hemmorhoids(piles),4,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+947,Pneumonia,10,4.0,5.0,1.0,Pneumonia,True,4.0,5.0,1.0,Pneumonia,True
+948,Peptic ulcer diseae,6,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+949,Hepatitis D,8,,,,,False,,,,,False
+950,Hepatitis D,8,,,,,False,,,,,False
+951,Malaria,7,6.0,3.0,1.0,Malaria,True,6.0,3.0,1.0,Malaria,True
+952,Hyperthyroidism,11,2.0,6.0,1.0,Hyperthyroidism,True,2.0,6.0,1.0,Hyperthyroidism,True
+953,Jaundice,8,6.0,3.0,1.0,Jaundice,True,6.0,3.0,1.0,Jaundice,True
+954,Fungal infection,3,1.0,6.0,1.0,Fungal infection,True,1.0,6.0,1.0,Fungal infection,True
+955,Hepatitis B,11,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+956,hepatitis A,10,2.0,5.0,1.0,hepatitis A,True,2.0,5.0,1.0,hepatitis A,True
+957,Impetigo,4,1.0,4.0,1.0,Impetigo,True,1.0,4.0,1.0,Impetigo,True
+958,Cervical spondylosis,4,1.0,7.0,1.0,Cervical spondylosis,True,1.0,7.0,1.0,Cervical spondylosis,True
+959,Peptic ulcer diseae,6,2.0,5.0,1.0,Peptic ulcer diseae,True,2.0,5.0,1.0,Peptic ulcer diseae,True
+960,Tuberculosis,15,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+961,Migraine,9,2.0,5.0,1.0,Migraine,True,2.0,5.0,1.0,Migraine,True
+962,Osteoarthristis,6,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+963,Common Cold,17,5.0,5.0,1.0,Common Cold,True,5.0,5.0,1.0,Common Cold,True
+964,Varicose veins,7,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+965,Hypoglycemia,12,2.0,5.0,1.0,Hypoglycemia,True,2.0,5.0,1.0,Hypoglycemia,True
+966,Hepatitis E,12,1.0,7.0,1.0,Hepatitis E,True,1.0,7.0,1.0,Hepatitis E,True
+967,Tuberculosis,15,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+968,Malaria,7,6.0,3.0,1.0,Malaria,True,6.0,3.0,1.0,Malaria,True
+969,Dimorphic hemmorhoids(piles),5,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True,1.0,6.0,1.0,Dimorphic hemmorhoids(piles),True
+970,Tuberculosis,15,5.0,5.0,1.0,Tuberculosis,True,5.0,5.0,1.0,Tuberculosis,True
+971,Hepatitis C,5,2.0,5.0,1.0,Hepatitis C,True,2.0,5.0,1.0,Hepatitis C,True
+972,(vertigo) Paroymsal  Positional Vertigo,6,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True,1.0,6.0,1.0,(vertigo) Paroymsal  Positional Vertigo,True
+973,Hepatitis D,9,,,,,False,,,,,False
+974,Chicken pox,10,7.0,3.0,1.0,Chicken pox,True,7.0,3.0,1.0,Chicken pox,True
+975,Varicose veins,7,1.0,6.0,1.0,Varicose veins,True,1.0,6.0,1.0,Varicose veins,True
+976,Chicken pox,11,7.0,3.0,1.0,Chicken pox,True,7.0,3.0,1.0,Chicken pox,True
+977,Chicken pox,10,6.0,3.0,1.0,Chicken pox,True,6.0,3.0,1.0,Chicken pox,True
+978,Bronchial Asthma,6,2.0,5.0,1.0,Bronchial Asthma,True,2.0,5.0,1.0,Bronchial Asthma,True
+979,Osteoarthristis,5,2.0,5.0,1.0,Osteoarthristis,True,2.0,5.0,1.0,Osteoarthristis,True
+980,Allergy,3,2.0,4.0,1.0,Allergy,True,2.0,4.0,1.0,Allergy,True
+981,Hepatitis B,12,2.0,5.0,1.0,Hepatitis B,True,2.0,5.0,1.0,Hepatitis B,True
+982,Acne,4,2.0,2.0,1.0,Acne,True,2.0,2.0,1.0,Acne,True
+983,Gastroenteritis,4,3.0,4.0,1.0,Gastroenteritis,True,3.0,4.0,1.0,Gastroenteritis,True
